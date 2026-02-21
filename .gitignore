@@ -1,0 +1,12 @@
+*.pem
+*.key
+*.p12
+.env
+__pycache__/
+*.pyc
+positions.json
+state/
+.uv/
+dashboard/node_modules/
+dashboard/dist/
+key.txt

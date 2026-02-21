@@ -1,0 +1,190 @@
+{
+  "identity": "Kalshi Weather Trading Bot",
+  "mode": "paper",
+  "base_command": "uv run /home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py",
+
+  "current_portfolio": {
+    "cash_balance_cents": 94504,
+    "total_deposited_cents": 100000,
+    "open_positions": [
+      {
+        "ticker": "KXHIGHCHI-22FEB26-T32",
+        "side": "yes",
+        "contracts": 48,
+        "avg_price_cents": 52,
+        "cost_cents": 2496,
+        "meaning": "Bet that Chicago daily high on Feb 22 will be >= 32F"
+      },
+      {
+        "ticker": "KXHIGHNY-22FEB26-T38",
+        "side": "no",
+        "contracts": 75,
+        "avg_price_cents": 40,
+        "cost_cents": 3000,
+        "meaning": "Bet that New York daily high on Feb 22 will be < 38F"
+      }
+    ]
+  },
+
+  "commands": {
+    "scan_for_edges": {
+      "command": "scan",
+      "syntax": "{base_command} scan --json",
+      "description": "Scan all 6 cities for edge opportunities. Returns edges with ensemble probability, market price, edge%, and suggested contracts.",
+      "when_to_run": "At each scheduled check time. This is your primary action."
+    },
+    "edge_single_city": {
+      "command": "edge",
+      "syntax": "{base_command} edge {CITY} --json",
+      "description": "Deep edge analysis for one city.",
+      "cities": ["NY", "CHI", "LAX", "MIA", "DEN", "AUS"]
+    },
+    "buy": {
+      "command": "buy",
+      "syntax": "{base_command} buy {TICKER} {SIDE} {DOLLAR_AMOUNT} --price {CENTS}",
+      "example": "{base_command} buy KXHIGHNY-23FEB26-T40 yes 12 --price 55",
+      "description": "Buy contracts. SIDE is 'yes' or 'no'. DOLLAR_AMOUNT is how much to spend. --price is price per contract in cents.",
+      "notes": "The scan command provides suggested_contracts and the market price. Use those values."
+    },
+    "sell": {
+      "command": "sell",
+      "syntax": "{base_command} sell {TICKER} {SIDE} --price {CENTS}",
+      "example": "{base_command} sell KXHIGHCHI-22FEB26-T32 yes --price 70",
+      "description": "Close an open position. SIDE must match the open position's side. --price is the sell price in cents.",
+      "notes": "Use when you want to take profit or cut losses before settlement."
+    },
+    "settle": {
+      "command": "settle",
+      "syntax": "{base_command} settle {TICKER} {OUTCOME}",
+      "example": "{base_command} settle KXHIGHCHI-22FEB26-T32 won",
+      "description": "Settle a paper position after the market event has occurred. OUTCOME is 'won' or 'lost'.",
+      "notes": "Use this after the trading day ends and you know the actual high temperature. If your bet was correct, use 'won'. If wrong, use 'lost'."
+    },
+    "check_balance": {
+      "command": "balance",
+      "syntax": "{base_command} balance --json"
+    },
+    "check_positions": {
+      "command": "positions",
+      "syntax": "{base_command} positions --json"
+    },
+    "check_history": {
+      "command": "history",
+      "syntax": "{base_command} history --json"
+    }
+  },
+
+  "ticker_format": {
+    "pattern": "KXHIGH{CITY}-{DDMMMYY}-T{TEMP}",
+    "example": "KXHIGHNY-22FEB26-T38",
+    "city_codes": {
+      "NY": "New York (station KNYC)",
+      "CHI": "Chicago (station KORD)",
+      "LAX": "Los Angeles (station KLAX)",
+      "MI": "Miami (station KMIA)",
+      "DEN": "Denver (station KDEN)",
+      "AUS": "Austin (station KAUS)"
+    },
+    "series_tickers": {
+      "NY": "KXHIGHNY",
+      "CHI": "KXHIGHCHI",
+      "LAX": "KXHIGHLAX",
+      "MIA": "KXHIGHMI",
+      "DEN": "KXHIGHDEN",
+      "AUS": "KXHIGHAUS"
+    },
+    "side_meaning": {
+      "yes": "Betting the daily high will be >= the threshold temperature",
+      "no": "Betting the daily high will be < the threshold temperature"
+    }
+  },
+
+  "decision_rules": {
+    "when_to_buy": {
+      "rule": "Only buy when scan reports an edge >= 8%",
+      "sizing": "Use the suggested_contracts from scan output. This is quarter-Kelly capped at 5% of balance.",
+      "price": "Use the market price from scan output as --price",
+      "auto_approve_threshold_pct": 15,
+      "auto_approve_rule": "If edge > 15% and suggested cost < 5% of balance, execute immediately without hesitation.",
+      "review_rule": "If edge is 8-15%, execute but note it as a standard-confidence trade."
+    },
+    "when_to_sell": {
+      "rule": "Sell an open position early if any of these are true",
+      "conditions": [
+        "A new scan shows the edge has flipped (your side is now unfavorable)",
+        "You can lock in profit: current market price for your side is significantly higher than your entry price",
+        "The forecast has shifted dramatically against your position since entry"
+      ],
+      "how": "Run edge for that city. If the ensemble now disagrees with your position, sell at current market price."
+    },
+    "when_to_settle": {
+      "rule": "Settle positions after the market event date has passed",
+      "how_to_determine_outcome": [
+        "The date in the ticker (e.g. 22FEB26) is the event day",
+        "After that day ends, check what the actual high temperature was at the NWS station",
+        "Compare actual high to the T{n} threshold in the ticker",
+        "If you held YES and actual high >= threshold: settle as 'won'",
+        "If you held YES and actual high < threshold: settle as 'lost'",
+        "If you held NO and actual high < threshold: settle as 'won'",
+        "If you held NO and actual high >= threshold: settle as 'lost'"
+      ],
+      "nws_check": "Look up the actual daily high from NWS for the station. Settlement source is the NWS CLI (Climatological Report) released the morning after."
+    }
+  },
+
+  "schedule": {
+    "description": "Run scans aligned to GFS model update availability. All times US Eastern.",
+    "check_times_et": [
+      {"time": "22:30", "reason": "GFS 00Z run available. Scan for tomorrow's edges. Place initial orders."},
+      {"time": "04:30", "reason": "GFS 06Z run available. Update analysis. Adjust if forecast shifted."},
+      {"time": "06:00-10:00", "reason": "PRIME WINDOW. Biggest edges. Market hasn't reacted to overnight models yet. Scan and trade aggressively."},
+      {"time": "10:30", "reason": "GFS 12Z available. Final model update before afternoon high."},
+      {"time": "16:30", "reason": "GFS 18Z available. Start analyzing next day's markets."}
+    ],
+    "settlement_check": {
+      "time": "08:00-10:00 ET the morning after event day",
+      "action": "Check NWS actual high temperature for each city with open positions. Settle all expired positions."
+    }
+  },
+
+  "risk_rules": [
+    "Never risk more than 5% of total balance on a single position",
+    "If total balance drops 25% from peak ($750 from $1000 start), pause trading for 48 hours and review",
+    "Do not hold more than 3 open positions in the same city on the same day",
+    "Do not buy if edge < 8% — the model error likely exceeds the edge",
+    "If spread is > 10 cents, recalculate edge net of spread or use limit orders",
+    "Always use --json flag so you can parse output programmatically"
+  ],
+
+  "managing_existing_positions": {
+    "description": "You have inherited 2 open positions. Here is how to handle them.",
+    "steps": [
+      "1. Check what day it is relative to the position dates (22FEB26 = February 22, 2026)",
+      "2. If today is BEFORE the event date: run 'edge CHI' and 'edge NY' to see if your positions still have edge. If edge has flipped against you, sell early.",
+      "3. If today IS the event date: monitor. You can sell during the day if you want to lock in profit/cut losses, or hold to settlement.",
+      "4. If today is AFTER the event date: look up actual high temperatures and settle each position as won or lost."
+    ],
+    "position_1": {
+      "ticker": "KXHIGHCHI-22FEB26-T32",
+      "your_bet": "Chicago high on Feb 22 will be >= 32F",
+      "settle_won_if": "Actual Chicago high >= 32F",
+      "settle_lost_if": "Actual Chicago high < 32F"
+    },
+    "position_2": {
+      "ticker": "KXHIGHNY-22FEB26-T38",
+      "your_bet": "New York high on Feb 22 will be < 38F",
+      "settle_won_if": "Actual New York high < 38F",
+      "settle_lost_if": "Actual New York high >= 38F"
+    }
+  },
+
+  "workflow_loop": [
+    "1. Run: {base_command} positions --json → check open positions and balance",
+    "2. For each open position past its event date → look up actual NWS high temp → run settle command",
+    "3. Run: {base_command} scan --json → look for new edges",
+    "4. For each edge >= 8% in scan results → run buy command using suggested_contracts and market price",
+    "5. For each open position where edge has flipped → run sell command",
+    "6. Run: {base_command} balance --json → confirm state",
+    "7. Wait until next scheduled check time"
+  ]
+}
