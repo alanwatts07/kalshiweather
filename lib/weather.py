@@ -20,6 +20,8 @@ class EnsembleForecast:
     city: City
     target_date: date
     members: list[float]  # temperature values (F) from each ensemble member
+    bias_applied: bool = False
+    bias_shift: float | None = None
 
     @property
     def count(self) -> int:
@@ -52,7 +54,35 @@ class EnsembleForecast:
         return sum(1 for t in self.members if low <= t < high) / len(self.members)
 
 
-def fetch_ensemble(city: City, target_date: Optional[date] = None) -> EnsembleForecast:
+def _apply_bias(
+    members: list[float], city: City, target_date: date
+) -> tuple[list[float], bool, float | None]:
+    """Apply bias correction to ensemble members. Returns (members, applied, shift).
+
+    Fails silently — bias is never a blocker for forecasting.
+    """
+    try:
+        from lib.bias import BiasCorrections, apply_bias_correction
+
+        corrections = BiasCorrections.load()
+        if corrections is None:
+            return members, False, None
+
+        bias = corrections.get_bias(city.code, target_date.month)
+        if bias is None or bias.samples < 10:
+            return members, False, None
+
+        corrected = apply_bias_correction(members, bias)
+        return corrected, True, round(-bias.mean_bias, 2)
+    except Exception:
+        return members, False, None
+
+
+def fetch_ensemble(
+    city: City,
+    target_date: Optional[date] = None,
+    apply_correction: bool = True,
+) -> EnsembleForecast:
     """Fetch GFS ensemble high temp forecast for a city."""
     if target_date is None:
         target_date = date.today() + timedelta(days=1)
@@ -72,7 +102,19 @@ def fetch_ensemble(city: City, target_date: Optional[date] = None) -> EnsembleFo
     data = resp.json()
 
     members = _extract_members(data, target_date)
-    return EnsembleForecast(city=city, target_date=target_date, members=members)
+
+    bias_applied = False
+    bias_shift = None
+    if apply_correction:
+        members, bias_applied, bias_shift = _apply_bias(members, city, target_date)
+
+    return EnsembleForecast(
+        city=city,
+        target_date=target_date,
+        members=members,
+        bias_applied=bias_applied,
+        bias_shift=bias_shift,
+    )
 
 
 def _extract_members(data: dict[str, Any], target_date: date) -> list[float]:

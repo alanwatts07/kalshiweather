@@ -232,6 +232,10 @@ def cmd_edge(args: argparse.Namespace) -> None:
     print(f"  Ensemble members: {forecast.count}")
     print(f"  Mean high: {forecast.mean:.1f}°F")
     print(f"  Spread: {forecast.spread:.1f}°F (min={min(forecast.members):.1f}, max={max(forecast.members):.1f})")
+    if forecast.bias_applied:
+        print(f"  Bias correction: {forecast.bias_shift:+.1f}°F (applied)")
+    else:
+        print(f"  Bias correction: none (raw GFS)")
 
     # Build probability distribution at common thresholds
     thresholds = list(range(int(min(forecast.members)) - 5, int(max(forecast.members)) + 10, 5))
@@ -281,7 +285,8 @@ def cmd_scan(args: argparse.Namespace) -> None:
         print(f"\n--- {city.name} ({code}) ---")
         try:
             forecast = fetch_ensemble(city, target)
-            print(f"  Members: {forecast.count} | Mean: {forecast.mean:.1f}°F | Spread: {forecast.spread:.1f}°F")
+            bias_tag = f"bias={forecast.bias_shift:+.1f}F" if forecast.bias_applied else "raw"
+            print(f"  Members: {forecast.count} | Mean: {forecast.mean:.1f}°F | Spread: {forecast.spread:.1f}°F | {bias_tag}")
 
             if client:
                 resp = client.get_markets(series_ticker=city.series_ticker)

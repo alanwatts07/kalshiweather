@@ -38,6 +38,10 @@ MIN_EDGE_PCT = 8.0          # minimum edge % to flag
 KELLY_FRACTION = 0.25       # quarter-Kelly
 MAX_POSITION_PCT = 5.0      # max 5% of balance per position
 
+# Bias correction
+BIAS_MIN_SAMPLES = 10       # minimum data points to trust a monthly bias
+BIAS_MAX_AGE_DAYS = 45      # retrain if corrections older than this
+
 
 def get_api_base() -> str:
     env = os.environ.get("KALSHI_ENV", "demo").lower()

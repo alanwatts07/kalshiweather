@@ -10,3 +10,4 @@ state/
 dashboard/node_modules/
 dashboard/dist/
 key.txt
+kalshi_workflow.sh
