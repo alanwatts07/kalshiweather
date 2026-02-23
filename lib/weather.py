@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from typing import Any, Optional
@@ -38,20 +39,33 @@ class EnsembleForecast:
         return max(self.members) - min(self.members)
 
     def probability_above(self, threshold: float) -> float:
-        """Fraction of ensemble members with temp >= threshold."""
+        """Probability temp >= threshold using Gaussian fit to ensemble.
+
+        Fits a normal distribution to the ensemble members and uses the CDF,
+        which gives smooth tail probabilities instead of 0%/100% from raw
+        member counting with only 31 samples. A minimum stdev floor of 1.5°F
+        accounts for model uncertainty beyond ensemble spread.
+        """
         if not self.members:
             return 0
-        return sum(1 for t in self.members if t >= threshold) / len(self.members)
+        n = len(self.members)
+        mu = sum(self.members) / n
+        variance = sum((t - mu) ** 2 for t in self.members) / n
+        sigma = max(math.sqrt(variance), 1.5)  # floor: 1.5°F minimum uncertainty
+        # P(temp >= threshold) = 1 - Φ((threshold - mu) / sigma)
+        z = (threshold - mu) / sigma
+        prob = 1.0 - 0.5 * (1.0 + math.erf(z / math.sqrt(2)))
+        return max(0.01, min(0.99, prob))  # clamp to [1%, 99%]
 
     def probability_below(self, threshold: float) -> float:
         """Fraction of ensemble members with temp < threshold."""
         return 1.0 - self.probability_above(threshold)
 
     def probability_between(self, low: float, high: float) -> float:
-        """Fraction of ensemble members with low <= temp < high."""
-        if not self.members:
-            return 0
-        return sum(1 for t in self.members if low <= t < high) / len(self.members)
+        """P(low <= temp <= high) using Gaussian CDF consistent with probability_above()."""
+        p_ge_low = self.probability_above(low)
+        p_ge_high_next = self.probability_above(high + 1)
+        return max(0.01, min(0.99, p_ge_low - p_ge_high_next))
 
 
 def _apply_bias(
@@ -156,6 +170,7 @@ class EdgeOpportunity:
     edge_pct: float
     kelly_fraction: float
     suggested_contracts: int
+    strike_type: str = "greater"  # "greater", "less", "between"
 
 
 def calculate_edges(
@@ -165,17 +180,37 @@ def calculate_edges(
 ) -> list[EdgeOpportunity]:
     """Compare ensemble probabilities to market prices, find edges.
 
-    market_prices: dict of ticker -> {"yes_price": int, "no_price": int, "threshold": float}
+    market_prices: dict of ticker -> {
+        "strike_type": "greater"|"less"|"between",
+        "floor_strike": float|None, "cap_strike": float|None,
+        "yes_price": int, "no_price": int,
+    }
     """
     edges: list[EdgeOpportunity] = []
 
     for ticker, info in market_prices.items():
-        threshold = info["threshold"]
+        strike_type = info.get("strike_type", "greater")
+        floor_strike = info.get("floor_strike")
+        cap_strike = info.get("cap_strike")
         yes_price = info.get("yes_price", 50)
         no_price = info.get("no_price", 50)
 
-        # Ensemble probability that high temp >= threshold
-        prob_yes = forecast.probability_above(threshold)
+        # Calculate ensemble P(YES) based on market type
+        if strike_type == "greater":
+            # YES = temp > floor → P(T >= floor+1)
+            threshold = floor_strike
+            prob_yes = forecast.probability_above(floor_strike + 1)
+        elif strike_type == "less":
+            # YES = temp < cap → 1 - P(T >= cap)
+            threshold = cap_strike
+            prob_yes = 1.0 - forecast.probability_above(cap_strike)
+        elif strike_type == "between":
+            # YES = floor <= temp <= cap → P(T >= floor) - P(T >= cap+1)
+            threshold = floor_strike  # display value
+            prob_yes = forecast.probability_between(floor_strike, cap_strike)
+        else:
+            continue  # unknown strike_type, skip
+
         prob_no = 1.0 - prob_yes
 
         # Check YES side edge
@@ -194,6 +229,7 @@ def calculate_edges(
                     edge_pct=edge_yes,
                     kelly_fraction=kelly["fraction"],
                     suggested_contracts=kelly["contracts"],
+                    strike_type=strike_type,
                 ))
 
         # Check NO side edge
@@ -212,6 +248,7 @@ def calculate_edges(
                     edge_pct=edge_no,
                     kelly_fraction=kelly["fraction"],
                     suggested_contracts=kelly["contracts"],
+                    strike_type=strike_type,
                 ))
 
     # Sort by edge size descending
