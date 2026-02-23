@@ -21,8 +21,10 @@ Commands:
     positions            Current positions + P&L
     edge CITY            GFS ensemble edge detection for a city
     scan                 Scan all cities for edge opportunities
+    auto                 Scan all cities + auto-buy edges (Kelly sized)
     buy TICKER SIDE AMT  Place buy order (SIDE: yes/no, AMT: dollars)
     sell TICKER SIDE AMT Sell/close position
+    auto-settle          Auto-settle paper positions via Kalshi API
     settle TICKER W/L    Settle paper position (won/lost)
     history              Trade history (paper or live)
     reset                Reset paper trading account to $1000
@@ -33,7 +35,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 # Add parent dir to path so we can import lib/
@@ -225,52 +227,54 @@ def cmd_edge(args: argparse.Namespace) -> None:
         sys.exit(1)
 
     city = CITIES[city_code]
-    target = date.today() + timedelta(days=1)
-
-    print(f"Fetching GFS ensemble forecast for {city.name} ({target})...")
-    forecast = fetch_ensemble(city, target)
-    print(f"  Ensemble members: {forecast.count}")
-    print(f"  Mean high: {forecast.mean:.1f}°F")
-    print(f"  Spread: {forecast.spread:.1f}°F (min={min(forecast.members):.1f}, max={max(forecast.members):.1f})")
-    if forecast.bias_applied:
-        print(f"  Bias correction: {forecast.bias_shift:+.1f}°F (applied)")
-    else:
-        print(f"  Bias correction: none (raw GFS)")
-
-    # Build probability distribution at common thresholds
-    thresholds = list(range(int(min(forecast.members)) - 5, int(max(forecast.members)) + 10, 5))
-
-    print(f"\n{'Threshold':<12} {'P(>=)':>8} {'P(<)':>8}")
-    print("-" * 30)
-    for t in thresholds:
-        p_above = forecast.probability_above(t)
-        print(f"  {t}°F{'':<6} {p_above:>7.1%} {1-p_above:>7.1%}")
-
-    # Try to get market prices and calculate edges
+    dates = [date.today(), date.today() + timedelta(days=1)]
     balance = _get_balance(args.live)
+
+    # Fetch all markets once
+    all_markets = []
     try:
         client = _get_client()
         resp = client.get_markets(series_ticker=city.series_ticker)
-        markets = resp.get("markets", [])
+        all_markets = resp.get("markets", [])
+    except Exception as e:
+        print(f"(Could not fetch market prices: {e})")
+        print("Showing forecast probabilities only (no edge calculation).")
 
-        if markets:
-            market_prices = _markets_to_prices(markets)
+    for target in dates:
+        print(f"\nFetching GFS ensemble forecast for {city.name} ({target})...")
+        forecast = fetch_ensemble(city, target)
+        print(f"  Ensemble members: {forecast.count}")
+        print(f"  Mean high: {forecast.mean:.1f}°F")
+        print(f"  Spread: {forecast.spread:.1f}°F (min={min(forecast.members):.1f}, max={max(forecast.members):.1f})")
+        if forecast.bias_applied:
+            print(f"  Bias correction: {forecast.bias_shift:+.1f}°F (applied)")
+        else:
+            print(f"  Bias correction: none (raw GFS)")
+
+        # Build probability distribution at common thresholds
+        thresholds = list(range(int(min(forecast.members)) - 5, int(max(forecast.members)) + 10, 5))
+
+        print(f"\n{'Threshold':<12} {'P(>=)':>8} {'P(<)':>8}")
+        print("-" * 30)
+        for t in thresholds:
+            p_above = forecast.probability_above(t)
+            print(f"  {t}°F{'':<6} {p_above:>7.1%} {1-p_above:>7.1%}")
+
+        if all_markets:
+            market_prices = _markets_to_prices(all_markets, target_date=target)
             if market_prices:
                 edges = calculate_edges(forecast, market_prices, balance)
                 _print_edges(edges, args.json)
             else:
-                print(f"\nNo parseable market tickers for {city.series_ticker}")
+                print(f"\nNo markets for {city.series_ticker} on {target}")
         else:
             print(f"\nNo open markets found for {city.series_ticker}")
-    except Exception as e:
-        print(f"\n(Could not fetch market prices: {e})")
-        print("Showing forecast probabilities only (no edge calculation).")
 
 
 def cmd_scan(args: argparse.Namespace) -> None:
     """Scan all cities for edge opportunities."""
     print(_banner(args.live))
-    target = date.today() + timedelta(days=1)
+    dates = [date.today(), date.today() + timedelta(days=1)]
     all_edges: list[EdgeOpportunity] = []
     balance = _get_balance(args.live)
 
@@ -282,29 +286,37 @@ def cmd_scan(args: argparse.Namespace) -> None:
         client = None
 
     for code, city in CITIES.items():
-        print(f"\n--- {city.name} ({code}) ---")
-        try:
-            forecast = fetch_ensemble(city, target)
-            bias_tag = f"bias={forecast.bias_shift:+.1f}F" if forecast.bias_applied else "raw"
-            print(f"  Members: {forecast.count} | Mean: {forecast.mean:.1f}°F | Spread: {forecast.spread:.1f}°F | {bias_tag}")
-
-            if client:
+        # Fetch all markets for this city once
+        all_markets = []
+        if client:
+            try:
                 resp = client.get_markets(series_ticker=city.series_ticker)
-                markets = resp.get("markets", [])
-                market_prices = _markets_to_prices(markets)
+                all_markets = resp.get("markets", [])
+            except Exception as e:
+                print(f"  Error fetching markets for {code}: {e}", file=sys.stderr)
 
-                if market_prices:
-                    edges = calculate_edges(forecast, market_prices, balance)
-                    all_edges.extend(edges)
-                    if edges:
-                        for e in edges:
-                            print(f"  EDGE: {e.ticker} {e.side} | ens={e.ensemble_prob:.1%} mkt={e.market_price:.0f}¢ edge={e.edge_pct:+.1f}%")
+        for target in dates:
+            print(f"\n--- {city.name} ({code}) — {target} ---")
+            try:
+                forecast = fetch_ensemble(city, target)
+                bias_tag = f"bias={forecast.bias_shift:+.1f}F" if forecast.bias_applied else "raw"
+                print(f"  Members: {forecast.count} | Mean: {forecast.mean:.1f}°F | Spread: {forecast.spread:.1f}°F | {bias_tag}")
+
+                if all_markets:
+                    market_prices = _markets_to_prices(all_markets, target_date=target)
+
+                    if market_prices:
+                        edges = calculate_edges(forecast, market_prices, balance)
+                        all_edges.extend(edges)
+                        if edges:
+                            for e in edges:
+                                print(f"  EDGE: {e.ticker} {e.side} | ens={e.ensemble_prob:.1%} mkt={e.market_price:.0f}¢ edge={e.edge_pct:+.1f}%")
+                        else:
+                            print(f"  No edges for {code} on {target}")
                     else:
-                        print(f"  No edges for {code}")
-                else:
-                    print(f"  No open markets for {city.series_ticker}")
-        except Exception as e:
-            print(f"  Error: {e}")
+                        print(f"  No markets for {city.series_ticker} on {target}")
+            except Exception as e:
+                print(f"  Error: {e}")
 
     if all_edges:
         all_edges.sort(key=lambda e: e.edge_pct, reverse=True)
@@ -454,6 +466,170 @@ def cmd_sell(args: argparse.Namespace) -> None:
         _print(resp, as_json=True)
 
 
+def cmd_auto_settle(args: argparse.Namespace) -> None:
+    """Auto-settle paper positions using Kalshi API market results."""
+    if args.live:
+        print("Auto-settle is only for paper trading. Live positions settle via Kalshi.", file=sys.stderr)
+        sys.exit(1)
+
+    store = PositionStore.load()
+    open_pos = [p for p in store.open_positions() if p.mode == "paper"]
+
+    if not open_pos:
+        print("No open paper positions to settle.")
+        return
+
+    client = _get_client()
+    settled = 0
+
+    for pos in open_pos:
+        try:
+            resp = client.get_market(pos.ticker)
+            m = resp.get("market", resp)
+            status = m.get("status", "")
+            result = m.get("result", "")
+
+            if status not in ("determined", "finalized"):
+                print(f"  {pos.ticker}: not settled yet (status={status}), skipping")
+                continue
+
+            won = pos.side == result
+            outcome_str = "WON" if won else "LOST"
+            store.paper_settle(pos.ticker, won)
+
+            payout = pos.contracts * 100 if won else 0
+            cost = pos.contracts * pos.avg_price_cents
+            pnl = payout - cost
+            print(f"  {pos.ticker} {pos.side.upper()}: Kalshi={result} → {outcome_str} (P&L: ${pnl/100:+.2f})")
+            settled += 1
+        except Exception as e:
+            print(f"  {pos.ticker}: error fetching market — {e}", file=sys.stderr)
+
+    print(f"\nSettled {settled}/{len(open_pos)} positions. Balance: ${store.paper_balance_cents/100:.2f}")
+
+    _write_status({
+        "command": "auto-settle",
+        "timestamp": datetime.utcnow().isoformat(),
+        "mode": "paper",
+        "balance_cents": store.paper_balance_cents,
+        "settled": settled,
+        "total_positions": len(open_pos),
+        "open_positions": len(store.open_positions()),
+        "total_pnl_cents": store.paper_pnl_cents,
+    })
+
+
+def cmd_auto(args: argparse.Namespace) -> None:
+    """Scan all cities and auto-buy every edge above threshold using Kelly sizing."""
+    print(_banner(args.live))
+    dates = [date.today(), date.today() + timedelta(days=1)]
+    balance = _get_balance(args.live)
+    store = PositionStore.load()
+
+    try:
+        client = _get_client()
+    except Exception as e:
+        print(f"Could not connect to Kalshi: {e}", file=sys.stderr)
+        sys.exit(1)
+
+    trades = []
+    edges_found = 0
+    skipped_existing = 0
+    skipped_error = 0
+
+    # Build set of existing positions for dedup: (ticker, side)
+    existing = {(p.ticker, p.side) for p in store.open_positions()}
+
+    for code, city in CITIES.items():
+        all_markets = []
+        try:
+            resp = client.get_markets(series_ticker=city.series_ticker)
+            all_markets = resp.get("markets", [])
+        except Exception as e:
+            print(f"  Error fetching markets for {code}: {e}", file=sys.stderr)
+            continue
+
+        for target in dates:
+            try:
+                forecast = fetch_ensemble(city, target)
+                market_prices = _markets_to_prices(all_markets, target_date=target)
+                if not market_prices:
+                    continue
+
+                edges = calculate_edges(forecast, market_prices, balance)
+                edges_found += len(edges)
+
+                for edge in edges:
+                    if (edge.ticker, edge.side) in existing:
+                        print(f"  SKIP (held): {edge.ticker} {edge.side}")
+                        skipped_existing += 1
+                        continue
+
+                    if edge.suggested_contracts <= 0:
+                        continue
+
+                    price = int(edge.market_price)
+                    try:
+                        if args.live:
+                            client.create_order(
+                                ticker=edge.ticker,
+                                side=edge.side,
+                                action="buy",
+                                count=edge.suggested_contracts,
+                            )
+                            store.open_position(edge.ticker, edge.side, edge.suggested_contracts, price)
+                        else:
+                            store.paper_buy(edge.ticker, edge.side, edge.suggested_contracts, price)
+
+                        existing.add((edge.ticker, edge.side))
+                        trade_info = {
+                            "ticker": edge.ticker,
+                            "side": edge.side,
+                            "contracts": edge.suggested_contracts,
+                            "price": price,
+                            "edge_pct": round(edge.edge_pct, 1),
+                        }
+                        trades.append(trade_info)
+                        print(f"  BUY: {edge.ticker} {edge.side} x{edge.suggested_contracts} @ {price}¢ (edge={edge.edge_pct:+.1f}%)")
+                    except Exception as e:
+                        print(f"  ERROR buying {edge.ticker}: {e}", file=sys.stderr)
+                        skipped_error += 1
+
+            except Exception as e:
+                print(f"  Error processing {code} {target}: {e}", file=sys.stderr)
+
+    # Reload store to get updated balance
+    store = PositionStore.load()
+    open_pos = store.open_positions()
+
+    # Summary
+    print(f"\n=== AUTO-TRADE SUMMARY ===")
+    print(f"  Edges found:    {edges_found}")
+    print(f"  Trades placed:  {len(trades)}")
+    print(f"  Skipped (held): {skipped_existing}")
+    print(f"  Skipped (err):  {skipped_error}")
+    print(f"  Open positions: {len(open_pos)}")
+    print(f"  Balance:        ${store.paper_balance_cents / 100:.2f}")
+
+    # Write status file
+    _write_status({
+        "command": "auto",
+        "timestamp": datetime.utcnow().isoformat(),
+        "mode": "live" if args.live else "paper",
+        "balance_cents": store.paper_balance_cents if not args.live else _get_balance(True),
+        "edges_found": edges_found,
+        "trades_placed": len(trades),
+        "trades_skipped_existing": skipped_existing,
+        "trades_skipped_error": skipped_error,
+        "trades": trades,
+        "open_positions": len(open_pos),
+        "total_pnl_cents": store.paper_pnl_cents if not args.live else 0,
+    })
+
+    if args.json:
+        _print(trades, as_json=True)
+
+
 def cmd_settle(args: argparse.Namespace) -> None:
     """Settle a paper position (mark as won or lost)."""
     if args.live:
@@ -544,31 +720,65 @@ def cmd_reset(args: argparse.Namespace) -> None:
 # --- Helpers ---
 
 
-def _parse_threshold(ticker: str) -> float | None:
-    """Parse temperature threshold from ticker like KXHIGHNY-26FEB22-T45."""
-    parts = ticker.split("-")
-    for part in parts:
-        if part.startswith("T") and len(part) > 1:
+_MONTH_MAP = {
+    "JAN": 1, "FEB": 2, "MAR": 3, "APR": 4, "MAY": 5, "JUN": 6,
+    "JUL": 7, "AUG": 8, "SEP": 9, "OCT": 10, "NOV": 11, "DEC": 12,
+}
+
+
+def _parse_event_date(event_ticker: str) -> date | None:
+    """Parse date from event_ticker like 'KXHIGHNY-26FEB24' → date(2026, 2, 24)."""
+    parts = event_ticker.split("-")
+    if len(parts) < 2:
+        return None
+    date_part = parts[-1]  # e.g. "26FEB24"
+    # Find month abbreviation
+    for abbr, month_num in _MONTH_MAP.items():
+        idx = date_part.find(abbr)
+        if idx >= 0:
             try:
-                return float(part[1:])
-            except ValueError:
-                pass
+                year_str = date_part[:idx]          # "26" → year prefix
+                day_str = date_part[idx + len(abbr):]  # "24" → day
+                year = 2000 + int(year_str)
+                day = int(day_str)
+                return date(year, month_num, day)
+            except (ValueError, IndexError):
+                continue
     return None
 
 
-def _markets_to_prices(markets: list[dict]) -> dict[str, dict]:
-    """Convert market list to {ticker: {threshold, yes_price, no_price}}."""
+def _markets_to_prices(markets: list[dict], target_date: date | None = None) -> dict[str, dict]:
+    """Convert market list to {ticker: {strike_type, floor_strike, cap_strike, yes_price, no_price}}.
+
+    Uses API fields (strike_type, floor_strike, cap_strike) instead of ticker parsing.
+    Optionally filters to markets matching target_date via event_ticker.
+    """
     prices = {}
     for m in markets:
         ticker = m.get("ticker", "")
-        threshold = _parse_threshold(ticker)
-        if threshold is not None:
-            yes_price = m.get("yes_ask", m.get("last_price", 50))
-            prices[ticker] = {
-                "threshold": threshold,
-                "yes_price": yes_price,
-                "no_price": m.get("no_ask", 100 - yes_price),
-            }
+        event_ticker = m.get("event_ticker", "")
+
+        # Date filter: skip markets that don't match target_date
+        if target_date is not None and event_ticker:
+            market_date = _parse_event_date(event_ticker)
+            if market_date is not None and market_date != target_date:
+                continue
+
+        strike_type = m.get("strike_type")
+        if not strike_type:
+            continue  # skip markets without strike_type info
+
+        floor_strike = m.get("floor_strike")
+        cap_strike = m.get("cap_strike")
+
+        yes_price = m.get("yes_ask", m.get("last_price", 50))
+        prices[ticker] = {
+            "strike_type": strike_type,
+            "floor_strike": floor_strike,
+            "cap_strike": cap_strike,
+            "yes_price": yes_price,
+            "no_price": m.get("no_ask", 100 - yes_price),
+        }
     return prices
 
 
@@ -596,6 +806,15 @@ def _print_edges(edges: list[EdgeOpportunity], as_json: bool) -> None:
 
     if as_json:
         _print([vars(e) for e in edges], as_json=True)
+
+
+def _write_status(data: dict) -> None:
+    """Write machine-readable JSON status file for cron monitoring."""
+    status_dir = Path.home() / ".openclaw" / "kalshi-weather"
+    status_dir.mkdir(parents=True, exist_ok=True)
+    status_file = status_dir / "last-run.json"
+    status_file.write_text(json.dumps(data, indent=2, default=str))
+    print(f"\nStatus written to {status_file}")
 
 
 def _pos_dict(p) -> dict:
@@ -640,6 +859,9 @@ def main():
     # scan
     subparsers.add_parser("scan", help="Scan all cities for edges")
 
+    # auto
+    subparsers.add_parser("auto", help="Scan all cities and auto-buy edges")
+
     # buy
     p_buy = subparsers.add_parser("buy", help="Place buy order")
     p_buy.add_argument("ticker", help="Market ticker")
@@ -653,6 +875,9 @@ def main():
     p_sell.add_argument("side", help="yes or no")
     p_sell.add_argument("amount", nargs="?", help="Dollar amount (live only)")
     p_sell.add_argument("--price", type=int, help="Price in cents (auto-fetched if omitted)")
+
+    # auto-settle
+    subparsers.add_parser("auto-settle", help="Auto-settle paper positions via Kalshi API")
 
     # settle
     p_settle = subparsers.add_parser("settle", help="Settle paper position (won/lost)")
@@ -674,8 +899,10 @@ def main():
         "positions": cmd_positions,
         "edge": cmd_edge,
         "scan": cmd_scan,
+        "auto": cmd_auto,
         "buy": cmd_buy,
         "sell": cmd_sell,
+        "auto-settle": cmd_auto_settle,
         "settle": cmd_settle,
         "history": cmd_history,
         "reset": cmd_reset,
