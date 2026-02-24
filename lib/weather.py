@@ -9,7 +9,7 @@ from typing import Any, Optional
 
 import httpx
 
-from lib.config import KELLY_FRACTION, MAX_POSITION_PCT, MIN_EDGE_PCT, City
+from lib.config import KELLY_FRACTION, MAX_POSITION_PCT, MIN_EDGE_PCT, MIN_PRICE_CENTS, City
 
 ENSEMBLE_URL = "https://ensemble-api.open-meteo.com/v1/ensemble"
 
@@ -213,9 +213,9 @@ def calculate_edges(
 
         prob_no = 1.0 - prob_yes
 
-        # Check YES side edge
+        # Check YES side edge (skip if price below floor)
         implied_yes = yes_price / 100.0
-        if implied_yes > 0:
+        if implied_yes > 0 and yes_price >= MIN_PRICE_CENTS:
             edge_yes = (prob_yes - implied_yes) / implied_yes * 100
             if edge_yes >= MIN_EDGE_PCT:
                 kelly = _kelly_size(prob_yes, implied_yes, balance_cents, yes_price)
@@ -232,9 +232,9 @@ def calculate_edges(
                     strike_type=strike_type,
                 ))
 
-        # Check NO side edge
+        # Check NO side edge (skip if price below floor)
         implied_no = no_price / 100.0
-        if implied_no > 0:
+        if implied_no > 0 and no_price >= MIN_PRICE_CENTS:
             edge_no = (prob_no - implied_no) / implied_no * 100
             if edge_no >= MIN_EDGE_PCT:
                 kelly = _kelly_size(prob_no, implied_no, balance_cents, no_price)
