@@ -1,6 +1,7 @@
 #!/bin/bash
 # Kalshi Weather Trading Workflow
 # Run this from cron to check positions, scan edges, and trade
+export PATH="$HOME/.local/bin:$PATH"
 
 cd /home/morpheus/Hackstuff/kalshiweather
 

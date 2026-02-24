@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Cron wrapper for kalshi weather auto-trade / auto-settle.
+export PATH="$HOME/.local/bin:$PATH"
 # Usage (crontab -e):
 #   30 11 * * * /path/to/scripts/cron.sh auto          # 6:30 AM ET (11:30 UTC)
 #   30 15 * * * /path/to/scripts/cron.sh auto-settle    # 10:30 AM ET (15:30 UTC)
