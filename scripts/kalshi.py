@@ -372,7 +372,26 @@ def cmd_buy(args: argparse.Namespace) -> None:
     cost = contracts * price / 100.0
 
     if not args.live:
-        # Paper trading
+        # Paper trading — check liquidity for realistic fills
+        try:
+            client = _get_client()
+            fillable, fill_price = _check_book_liquidity(client, ticker, side, contracts, price)
+        except Exception:
+            fillable, fill_price = min(contracts, 5), price + 2
+
+        if fillable <= 0:
+            print(f"No liquidity on {ticker} {side} order book", file=sys.stderr)
+            sys.exit(1)
+
+        if fillable < contracts:
+            print(f"  Book depth: only {fillable}/{contracts} contracts available")
+            contracts = fillable
+
+        if fill_price > price:
+            print(f"  Slippage: {price}¢ → {fill_price}¢ avg fill")
+            price = fill_price
+
+        cost = contracts * price / 100.0
         store = PositionStore.load()
         try:
             pos = store.paper_buy(ticker, side, contracts, price)
@@ -569,28 +588,45 @@ def cmd_auto(args: argparse.Namespace) -> None:
                         continue
 
                     price = int(edge.market_price)
+
+                    # Check real order book liquidity
+                    fillable, fill_price = _check_book_liquidity(
+                        client, edge.ticker, edge.side,
+                        edge.suggested_contracts, price,
+                    )
+                    if fillable <= 0:
+                        print(f"  SKIP (no liquidity): {edge.ticker} {edge.side}")
+                        skipped_error += 1
+                        continue
+
+                    if fillable < edge.suggested_contracts:
+                        print(f"  TRIM: {edge.ticker} {edge.suggested_contracts} → {fillable} (book depth)")
+
+                    if fill_price > price:
+                        print(f"  SLIP: {edge.ticker} {price}¢ → {fill_price}¢ avg fill")
+
                     try:
                         if args.live:
                             client.create_order(
                                 ticker=edge.ticker,
                                 side=edge.side,
                                 action="buy",
-                                count=edge.suggested_contracts,
+                                count=fillable,
                             )
-                            store.open_position(edge.ticker, edge.side, edge.suggested_contracts, price)
+                            store.open_position(edge.ticker, edge.side, fillable, fill_price)
                         else:
-                            store.paper_buy(edge.ticker, edge.side, edge.suggested_contracts, price)
+                            store.paper_buy(edge.ticker, edge.side, fillable, fill_price)
 
                         existing.add((edge.ticker, edge.side))
                         trade_info = {
                             "ticker": edge.ticker,
                             "side": edge.side,
-                            "contracts": edge.suggested_contracts,
-                            "price": price,
+                            "contracts": fillable,
+                            "price": fill_price,
                             "edge_pct": round(edge.edge_pct, 1),
                         }
                         trades.append(trade_info)
-                        print(f"  BUY: {edge.ticker} {edge.side} x{edge.suggested_contracts} @ {price}¢ (edge={edge.edge_pct:+.1f}%)")
+                        print(f"  BUY: {edge.ticker} {edge.side} x{fillable} @ {fill_price}¢ (edge={edge.edge_pct:+.1f}%)")
                     except Exception as e:
                         print(f"  ERROR buying {edge.ticker}: {e}", file=sys.stderr)
                         skipped_error += 1
@@ -780,6 +816,61 @@ def _markets_to_prices(markets: list[dict], target_date: date | None = None) -> 
             "no_price": m.get("no_ask", 100 - yes_price),
         }
     return prices
+
+
+def _check_book_liquidity(client, ticker: str, side: str, contracts: int, price: int) -> tuple[int, int]:
+    """Check order book depth and return (fillable_contracts, avg_fill_price).
+
+    Walks the order book to see how many contracts can actually fill
+    at or near the quoted ask. Returns capped contracts and a realistic
+    average fill price accounting for slippage.
+    """
+    try:
+        ob_resp = client.get_orderbook(ticker, depth=10)
+        ob = ob_resp.get("orderbook", ob_resp)
+    except Exception:
+        # Can't fetch book — assume thin, cap at 5 contracts with 2¢ slippage
+        return min(contracts, 5), price + 2
+
+    # Pick the right side of the book
+    if side == "yes":
+        levels = ob.get("yes", ob.get("asks", []))
+    else:
+        levels = ob.get("no", ob.get("asks", []))
+
+    if not levels:
+        # Empty book — can't fill anything
+        return 0, price
+
+    # Walk the book: fill contracts at each price level
+    remaining = contracts
+    total_cost = 0
+    filled = 0
+
+    for level in levels:
+        level_price = level.get("price", level.get("yes_price", 0))
+        level_qty = level.get("quantity", level.get("count", 0))
+
+        if level_price <= 0 or level_qty <= 0:
+            continue
+
+        # Skip levels priced way above our target (>10¢ slippage = bad fill)
+        if level_price > price + 10:
+            break
+
+        take = min(remaining, level_qty)
+        total_cost += take * level_price
+        filled += take
+        remaining -= take
+
+        if remaining <= 0:
+            break
+
+    if filled == 0:
+        return 0, price
+
+    avg_price = total_cost // filled
+    return filled, avg_price
 
 
 def _get_balance(live: bool) -> int:

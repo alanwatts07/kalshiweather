@@ -26,7 +26,9 @@ class KalshiClient:
     def _headers(self, method: str, path: str) -> dict[str, str]:
         headers = {"Content-Type": "application/json"}
         if self.auth:
-            headers.update(self.auth.headers(method.upper(), path))
+            # Sign the full request path (httpx resolves base_url + path)
+            sign_path = f"/trade-api/v2{path}"
+            headers.update(self.auth.headers(method.upper(), sign_path))
         return headers
 
     def _request(self, method: str, path: str, **kwargs: Any) -> dict[str, Any]:
