@@ -1,0 +1,240 @@
+[2026-02-22 14:40:56 EST] =========================================
+[2026-02-22 14:40:56 EST] Kalshi workflow starting...
+[2026-02-22 14:40:56 EST] Checking positions...
+[2026-02-22 14:40:56 EST] Balance:   Cash:       $867.78
+[2026-02-22 14:40:56 EST] Scanning for edges...
+[2026-02-22 14:40:56 EST] No edges found >= 8%
+[2026-02-22 14:40:56 EST] Final balance:
+[PAPER TRADING] Virtual $1000 account — no real money
+
+Paper Trading Account
+  Cash:       $867.78
+  In trades:  $100.72
+  Equity:     $968.50
+  Total P&L:  $-31.50
+  Realized:   $-31.50
+[2026-02-22 14:40:56 EST] Workflow complete.
+[2026-02-22 14:40:56 EST] =========================================
+[2026-02-23 07:35:59 EST] =========================================
+[2026-02-23 07:35:59 EST] Kalshi workflow starting...
+[2026-02-23 07:35:59 EST] Checking positions...
+[2026-02-23 07:35:59 EST] Balance:   Cash:       $867.78
+[2026-02-23 07:35:59 EST] Scanning for edges...
+[2026-02-23 07:35:59 EST] No edges found >= 8%
+[2026-02-23 07:35:59 EST] Final balance:
+[PAPER TRADING] Virtual $1000 account — no real money
+
+Paper Trading Account
+  Cash:       $867.78
+  In trades:  $100.72
+  Equity:     $968.50
+  Total P&L:  $-31.50
+  Realized:   $-31.50
+[2026-02-23 07:35:59 EST] Workflow complete.
+[2026-02-23 07:35:59 EST] =========================================
+[2026-02-27 07:01:01 EST] =========================================
+[2026-02-27 07:01:01 EST] Kalshi workflow starting...
+[2026-02-27 07:01:01 EST] Auto-settling expired positions...
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:512: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHLAX-26FEB26-T76: not settled yet (status=closed), skipping
+  KXHIGHNY-26FEB26-T43: not settled yet (status=closed), skipping
+  KXHIGHNY-26FEB26-B42.5: not settled yet (status=closed), skipping
+  KXHIGHNY-26FEB27-B40.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B42.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B44.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B38.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB26-B40.5: not settled yet (status=closed), skipping
+  KXHIGHCHI-26FEB26-B44.5: not settled yet (status=closed), skipping
+  KXHIGHCHI-26FEB26-B42.5: not settled yet (status=closed), skipping
+  KXHIGHCHI-26FEB27-T60: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B62.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B60.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B64.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-T83: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B82.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B80.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B78.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB26-B61.5: not settled yet (status=closed), skipping
+  KXHIGHDEN-26FEB26-B63.5: not settled yet (status=closed), skipping
+  KXHIGHDEN-26FEB26-B59.5: not settled yet (status=closed), skipping
+  KXHIGHDEN-26FEB27-T65: not settled yet (status=active), skipping
+
+Settled 0/22 positions. Balance: $393.56
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+[2026-02-27 07:01:01 EST] Checking positions...
+[2026-02-27 07:01:01 EST] Balance:   Cash:       $393.56
+[2026-02-27 07:01:01 EST] Scanning for edges...
+[2026-02-27 07:01:01 EST] No edges found >= 8%
+[2026-02-27 07:01:01 EST] Final balance:
+[PAPER TRADING] Virtual $1000 account — no real money
+
+Paper Trading Account
+  Cash:       $393.56
+  In trades:  $4141.70
+  Equity:     $4535.26
+  Total P&L:  $+3535.26
+  Realized:   $+3535.26
+[2026-02-27 07:01:01 EST] Workflow complete.
+[2026-02-27 07:01:01 EST] =========================================
+[2026-02-27 10:30:41 EST] =========================================
+[2026-02-27 10:30:41 EST] Kalshi workflow starting...
+[2026-02-27 10:30:41 EST] Auto-settling expired positions...
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:512: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHLAX-26FEB26-T76 NO: Kalshi=yes → LOST (P&L: $-12.50)
+  KXHIGHNY-26FEB26-T43 NO: Kalshi=yes → LOST (P&L: $-206.46)
+  KXHIGHNY-26FEB26-B42.5 NO: Kalshi=no → WON (P&L: $+48.26)
+  KXHIGHNY-26FEB27-B40.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B42.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B44.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B38.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB26-B40.5 YES: Kalshi=no → LOST (P&L: $-206.36)
+  KXHIGHCHI-26FEB26-B44.5 NO: Kalshi=no → WON (P&L: $+155.66)
+  KXHIGHCHI-26FEB26-B42.5 NO: Kalshi=yes → LOST (P&L: $-206.05)
+  KXHIGHCHI-26FEB27-T60: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B62.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B60.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B64.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-T83: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B82.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B80.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B78.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB26-B61.5 NO: Kalshi=no → WON (P&L: $+143.09)
+  KXHIGHDEN-26FEB26-B63.5 NO: Kalshi=yes → LOST (P&L: $-205.90)
+  KXHIGHDEN-26FEB26-B59.5 NO: Kalshi=no → WON (P&L: $+33.60)
+  KXHIGHDEN-26FEB27-T65: not settled yet (status=active), skipping
+
+Settled 9/22 positions. Balance: $1598.56
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+[2026-02-27 10:30:41 EST] Checking positions...
+[2026-02-27 10:30:41 EST] Balance:   Cash:       $1598.56
+[2026-02-27 10:30:41 EST] Scanning for edges...
+[2026-02-27 10:30:41 EST] No edges found >= 8%
+[2026-02-27 10:30:41 EST] Final balance:
+[PAPER TRADING] Virtual $1000 account — no real money
+
+Paper Trading Account
+  Cash:       $1598.56
+  In trades:  $2480.04
+  Equity:     $4078.60
+  Total P&L:  $+3078.60
+  Realized:   $+3078.60
+[2026-02-27 10:30:41 EST] Workflow complete.
+[2026-02-27 10:30:41 EST] =========================================
+[2026-02-27 16:30:48 EST] =========================================
+[2026-02-27 16:30:48 EST] Kalshi workflow starting...
+[2026-02-27 16:30:48 EST] Auto-settling expired positions...
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:512: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHNY-26FEB27-B40.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B42.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B44.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B38.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-T60: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B62.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B60.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B64.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-T83: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B82.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B80.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B78.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-T65: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-T45: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB28-T50: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB28-B52.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-T48: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-B43.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-B45.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-B41.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-T41: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-T83: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-T80: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B77.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B75.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B79.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-B67.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-B69.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-B65.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-B70.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-B68.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-B66.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-T71: not settled yet (status=active), skipping
+
+Settled 0/33 positions. Balance: $13.70
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+[2026-02-27 16:30:48 EST] Checking positions...
+[2026-02-27 16:30:48 EST] Balance:   Cash:       $13.70
+[2026-02-27 16:30:48 EST] Scanning for edges...
+[2026-02-27 16:30:48 EST] No edges found >= 8%
+[2026-02-27 16:30:48 EST] Final balance:
+[PAPER TRADING] Virtual $1000 account — no real money
+
+Paper Trading Account
+  Cash:       $13.70
+  In trades:  $4064.90
+  Equity:     $4078.60
+  Total P&L:  $+3078.60
+  Realized:   $+3078.60
+[2026-02-27 16:30:48 EST] Workflow complete.
+[2026-02-27 16:30:48 EST] =========================================
+[2026-02-27 22:30:44 EST] =========================================
+[2026-02-27 22:30:44 EST] Kalshi workflow starting...
+[2026-02-27 22:30:44 EST] Auto-settling expired positions...
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:512: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHNY-26FEB27-B40.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B42.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B44.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B38.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-T60: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B62.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B60.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B64.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-T83: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B82.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B80.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B78.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-T65: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-T45: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB28-T50: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB28-B52.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-T48: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-B43.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-B45.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-B41.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-T41: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-T83: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-T80: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B77.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B75.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B79.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-B67.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-B69.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-B65.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-B70.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-B68.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-B66.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-T71: not settled yet (status=active), skipping
+
+Settled 0/33 positions. Balance: $13.70
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+[2026-02-27 22:30:44 EST] Checking positions...
+[2026-02-27 22:30:44 EST] Balance:   Cash:       $13.70
+[2026-02-27 22:30:44 EST] Scanning for edges...
+[2026-02-27 22:30:44 EST] No edges found >= 8%
+[2026-02-27 22:30:44 EST] Final balance:
+[PAPER TRADING] Virtual $1000 account — no real money
+
+Paper Trading Account
+  Cash:       $13.70
+  In trades:  $4064.90
+  Equity:     $4078.60
+  Total P&L:  $+3078.60
+  Realized:   $+3078.60
+[2026-02-27 22:30:44 EST] Workflow complete.
+[2026-02-27 22:30:44 EST] =========================================

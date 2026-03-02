@@ -832,14 +832,13 @@ def _check_book_liquidity(client, ticker: str, side: str, contracts: int, price:
         # Can't fetch book — assume thin, cap at 5 contracts with 2¢ slippage
         return min(contracts, 5), price + 2
 
-    # Pick the right side of the book
+    # Pick the right side of the book — levels are [price, quantity] arrays
     if side == "yes":
-        levels = ob.get("yes", ob.get("asks", []))
+        levels = ob.get("yes", [])
     else:
-        levels = ob.get("no", ob.get("asks", []))
+        levels = ob.get("no", [])
 
     if not levels:
-        # Empty book — can't fill anything
         return 0, price
 
     # Walk the book: fill contracts at each price level
@@ -848,8 +847,9 @@ def _check_book_liquidity(client, ticker: str, side: str, contracts: int, price:
     filled = 0
 
     for level in levels:
-        level_price = level.get("price", level.get("yes_price", 0))
-        level_qty = level.get("quantity", level.get("count", 0))
+        if not isinstance(level, (list, tuple)) or len(level) < 2:
+            continue
+        level_price, level_qty = int(level[0]), int(level[1])
 
         if level_price <= 0 or level_qty <= 0:
             continue
