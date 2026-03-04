@@ -1,0 +1,1016 @@
+{
+  "paper_balance_cents": 100974,
+  "total_deposited_cents": 100000,
+  "positions": [
+    {
+      "ticker": "KXHIGHNY-26MAR01-B42.5",
+      "side": "yes",
+      "contracts": 190,
+      "avg_price_cents": 7,
+      "opened_at": "2026-02-28T21:25:13.920771",
+      "closed_at": "2026-03-02T20:30:01.710250",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR01-B40.5",
+      "side": "yes",
+      "contracts": 146,
+      "avg_price_cents": 24,
+      "opened_at": "2026-02-28T21:25:14.167018",
+      "closed_at": "2026-03-02T20:30:01.765742",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR01-B38.5",
+      "side": "no",
+      "contracts": 73,
+      "avg_price_cents": 49,
+      "opened_at": "2026-02-28T21:25:14.402570",
+      "closed_at": "2026-03-02T20:30:01.821691",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR01-T29",
+      "side": "yes",
+      "contracts": 500,
+      "avg_price_cents": 1,
+      "opened_at": "2026-02-28T21:25:16.406181",
+      "closed_at": "2026-03-02T20:30:01.886867",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR01-B29.5",
+      "side": "yes",
+      "contracts": 143,
+      "avg_price_cents": 1,
+      "opened_at": "2026-02-28T21:25:16.648750",
+      "closed_at": "2026-03-02T20:30:01.936338",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR01-B31.5",
+      "side": "no",
+      "contracts": 70,
+      "avg_price_cents": 56,
+      "opened_at": "2026-02-28T21:25:16.887305",
+      "closed_at": "2026-03-02T20:30:01.990051",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR01-B33.5",
+      "side": "no",
+      "contracts": 68,
+      "avg_price_cents": 56,
+      "opened_at": "2026-02-28T21:25:17.129908",
+      "closed_at": "2026-03-02T20:30:02.038026",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR01-B35.5",
+      "side": "no",
+      "contracts": 54,
+      "avg_price_cents": 75,
+      "opened_at": "2026-02-28T21:25:17.364364",
+      "closed_at": "2026-03-02T20:30:02.091379",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26FEB28-B79.5",
+      "side": "no",
+      "contracts": 714,
+      "avg_price_cents": 1,
+      "opened_at": "2026-02-28T21:25:18.761263",
+      "closed_at": "2026-03-01T20:30:02.240447",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26FEB28-T80",
+      "side": "yes",
+      "contracts": 416,
+      "avg_price_cents": 1,
+      "opened_at": "2026-02-28T21:25:18.999672",
+      "closed_at": "2026-03-01T20:30:02.303216",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR01-T78",
+      "side": "yes",
+      "contracts": 555,
+      "avg_price_cents": 1,
+      "opened_at": "2026-02-28T21:25:20.083443",
+      "closed_at": "2026-03-02T20:30:02.149808",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR01-B73.5",
+      "side": "no",
+      "contracts": 70,
+      "avg_price_cents": 53,
+      "opened_at": "2026-02-28T21:25:20.329044",
+      "closed_at": "2026-03-02T20:30:02.198792",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR01-B71.5",
+      "side": "no",
+      "contracts": 63,
+      "avg_price_cents": 62,
+      "opened_at": "2026-02-28T21:25:20.575587",
+      "closed_at": "2026-03-02T20:30:02.255597",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR01-B75.5",
+      "side": "no",
+      "contracts": 60,
+      "avg_price_cents": 64,
+      "opened_at": "2026-02-28T21:25:20.816372",
+      "closed_at": "2026-03-02T20:30:02.357726",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26FEB28-B66.5",
+      "side": "no",
+      "contracts": 185,
+      "avg_price_cents": 17,
+      "opened_at": "2026-02-28T21:25:23.739759",
+      "closed_at": "2026-03-01T20:30:02.583379",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26FEB28-B68.5",
+      "side": "no",
+      "contracts": 62,
+      "avg_price_cents": 47,
+      "opened_at": "2026-02-28T21:25:23.982623",
+      "closed_at": "2026-03-01T20:30:02.636076",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR01-T61",
+      "side": "yes",
+      "contracts": 500,
+      "avg_price_cents": 1,
+      "opened_at": "2026-02-28T21:25:25.065149",
+      "closed_at": "2026-03-02T20:30:02.418669",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR01-B61.5",
+      "side": "yes",
+      "contracts": 250,
+      "avg_price_cents": 7,
+      "opened_at": "2026-02-28T21:25:25.387115",
+      "closed_at": "2026-03-02T20:30:02.473438",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR01-B65.5",
+      "side": "no",
+      "contracts": 65,
+      "avg_price_cents": 55,
+      "opened_at": "2026-02-28T21:25:25.628861",
+      "closed_at": "2026-03-02T20:30:02.528297",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR01-B63.5",
+      "side": "no",
+      "contracts": 69,
+      "avg_price_cents": 57,
+      "opened_at": "2026-02-28T21:25:25.869481",
+      "closed_at": "2026-03-02T20:30:02.590188",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26FEB28-B88.5",
+      "side": "no",
+      "contracts": 116,
+      "avg_price_cents": 3,
+      "opened_at": "2026-02-28T21:25:27.044947",
+      "closed_at": "2026-03-01T20:30:02.892524",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26FEB28-B86.5",
+      "side": "no",
+      "contracts": 78,
+      "avg_price_cents": 8,
+      "opened_at": "2026-02-28T21:25:27.283954",
+      "closed_at": "2026-03-01T20:30:02.950022",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR01-T81",
+      "side": "yes",
+      "contracts": 714,
+      "avg_price_cents": 1,
+      "opened_at": "2026-02-28T21:25:28.151483",
+      "closed_at": "2026-03-02T20:30:02.637489",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR01-B81.5",
+      "side": "yes",
+      "contracts": 121,
+      "avg_price_cents": 7,
+      "opened_at": "2026-02-28T21:25:28.391581",
+      "closed_at": "2026-03-02T20:30:02.699447",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR01-B83.5",
+      "side": "no",
+      "contracts": 80,
+      "avg_price_cents": 35,
+      "opened_at": "2026-02-28T21:25:28.637294",
+      "closed_at": "2026-03-02T20:30:02.759392",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR01-B85.5",
+      "side": "no",
+      "contracts": 64,
+      "avg_price_cents": 49,
+      "opened_at": "2026-02-28T21:25:28.878074",
+      "closed_at": "2026-03-02T20:30:02.818305",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR01-B42.5",
+      "side": "no",
+      "contracts": 149,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-01T16:30:02.803355",
+      "closed_at": "2026-03-02T20:30:02.874575",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR01-B44.5",
+      "side": "no",
+      "contracts": 24,
+      "avg_price_cents": 74,
+      "opened_at": "2026-03-01T16:30:02.857565",
+      "closed_at": "2026-03-02T20:30:02.921795",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR02-B30.5",
+      "side": "yes",
+      "contracts": 76,
+      "avg_price_cents": 3,
+      "opened_at": "2026-03-01T16:30:03.453625",
+      "closed_at": "2026-03-03T20:30:02.016358",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR02-B32.5",
+      "side": "yes",
+      "contracts": 22,
+      "avg_price_cents": 13,
+      "opened_at": "2026-03-01T16:30:03.504368",
+      "closed_at": "2026-03-03T20:30:02.078170",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR02-T35",
+      "side": "no",
+      "contracts": 23,
+      "avg_price_cents": 70,
+      "opened_at": "2026-03-01T16:30:03.553177",
+      "closed_at": "2026-03-03T20:30:02.132909",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR02-B34.5",
+      "side": "no",
+      "contracts": 26,
+      "avg_price_cents": 66,
+      "opened_at": "2026-03-01T16:30:03.601067",
+      "closed_at": "2026-03-03T20:30:02.190171",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR02-T40",
+      "side": "yes",
+      "contracts": 231,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-01T16:30:04.788794",
+      "closed_at": "2026-03-03T20:30:02.268103",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR02-B40.5",
+      "side": "yes",
+      "contracts": 189,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-01T16:30:04.845200",
+      "closed_at": "2026-03-03T20:30:02.326288",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR02-B44.5",
+      "side": "no",
+      "contracts": 27,
+      "avg_price_cents": 62,
+      "opened_at": "2026-03-01T16:30:04.901596",
+      "closed_at": "2026-03-03T20:30:02.391503",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR02-B46.5",
+      "side": "no",
+      "contracts": 26,
+      "avg_price_cents": 61,
+      "opened_at": "2026-03-01T16:30:04.951462",
+      "closed_at": "2026-03-03T20:30:02.509795",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR02-T47",
+      "side": "no",
+      "contracts": 25,
+      "avg_price_cents": 67,
+      "opened_at": "2026-03-01T16:30:05.000555",
+      "closed_at": "2026-03-03T20:30:02.575983",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR02-B42.5",
+      "side": "no",
+      "contracts": 25,
+      "avg_price_cents": 57,
+      "opened_at": "2026-03-01T16:30:05.061159",
+      "closed_at": "2026-03-03T20:30:02.627630",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR01-B77.5",
+      "side": "yes",
+      "contracts": 29,
+      "avg_price_cents": 3,
+      "opened_at": "2026-03-01T16:30:05.691513",
+      "closed_at": "2026-03-02T20:30:03.498791",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR02-B68.5",
+      "side": "no",
+      "contracts": 32,
+      "avg_price_cents": 49,
+      "opened_at": "2026-03-01T16:30:06.280485",
+      "closed_at": "2026-03-03T20:30:02.681231",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR02-B66.5",
+      "side": "no",
+      "contracts": 26,
+      "avg_price_cents": 50,
+      "opened_at": "2026-03-01T16:30:06.325541",
+      "closed_at": "2026-03-03T20:30:02.744263",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR02-B70.5",
+      "side": "no",
+      "contracts": 26,
+      "avg_price_cents": 59,
+      "opened_at": "2026-03-01T16:30:06.391442",
+      "closed_at": "2026-03-03T20:30:02.804827",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR02-B72.5",
+      "side": "no",
+      "contracts": 22,
+      "avg_price_cents": 73,
+      "opened_at": "2026-03-01T16:30:06.461274",
+      "closed_at": "2026-03-03T20:30:02.864882",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR02-T68",
+      "side": "yes",
+      "contracts": 208,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-01T16:30:08.752150",
+      "closed_at": "2026-03-03T20:30:02.923011",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR02-B70.5",
+      "side": "no",
+      "contracts": 30,
+      "avg_price_cents": 49,
+      "opened_at": "2026-03-01T16:30:08.808291",
+      "closed_at": "2026-03-03T20:30:02.976664",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR02-B72.5",
+      "side": "no",
+      "contracts": 29,
+      "avg_price_cents": 41,
+      "opened_at": "2026-03-01T16:30:08.856955",
+      "closed_at": "2026-03-03T20:30:03.041943",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR02-B74.5",
+      "side": "no",
+      "contracts": 23,
+      "avg_price_cents": 60,
+      "opened_at": "2026-03-01T16:30:08.905835",
+      "closed_at": "2026-03-03T20:30:03.101642",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR02-T80",
+      "side": "yes",
+      "contracts": 173,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-01T16:30:10.056662",
+      "closed_at": "2026-03-03T20:30:03.154082",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR02-B84.5",
+      "side": "no",
+      "contracts": 31,
+      "avg_price_cents": 48,
+      "opened_at": "2026-03-01T16:30:10.112190",
+      "closed_at": "2026-03-03T20:30:03.213562",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR02-B80.5",
+      "side": "yes",
+      "contracts": 35,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-01T16:30:10.161863",
+      "closed_at": "2026-03-03T20:30:03.270087",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR02-B82.5",
+      "side": "no",
+      "contracts": 28,
+      "avg_price_cents": 42,
+      "opened_at": "2026-03-01T16:30:10.216492",
+      "closed_at": "2026-03-03T20:30:03.329248",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR02-B86.5",
+      "side": "no",
+      "contracts": 22,
+      "avg_price_cents": 56,
+      "opened_at": "2026-03-01T16:30:10.268618",
+      "closed_at": "2026-03-03T20:30:03.388401",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR02-B34.5",
+      "side": "yes",
+      "contracts": 95,
+      "avg_price_cents": 3,
+      "opened_at": "2026-03-02T16:30:03.262314",
+      "closed_at": "2026-03-03T20:30:03.447285",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR02-B32.5",
+      "side": "no",
+      "contracts": 38,
+      "avg_price_cents": 30,
+      "opened_at": "2026-03-02T16:30:03.331330",
+      "closed_at": "2026-03-03T20:30:03.501768",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR02-B30.5",
+      "side": "no",
+      "contracts": 19,
+      "avg_price_cents": 68,
+      "opened_at": "2026-03-02T16:30:03.383258",
+      "closed_at": "2026-03-03T20:30:03.555192",
+      "close_price_cents": 100,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR03-T39",
+      "side": "yes",
+      "contracts": 73,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-02T16:30:04.025611",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR03-B39.5",
+      "side": "no",
+      "contracts": 23,
+      "avg_price_cents": 51,
+      "opened_at": "2026-03-02T16:30:04.078670",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR03-B41.5",
+      "side": "no",
+      "contracts": 21,
+      "avg_price_cents": 58,
+      "opened_at": "2026-03-02T16:30:04.134041",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR03-B43.5",
+      "side": "no",
+      "contracts": 17,
+      "avg_price_cents": 68,
+      "opened_at": "2026-03-02T16:30:04.186204",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR03-T39",
+      "side": "yes",
+      "contracts": 325,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-02T16:30:05.427704",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR03-B39.5",
+      "side": "yes",
+      "contracts": 135,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-02T16:30:05.486412",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR03-B43.5",
+      "side": "no",
+      "contracts": 23,
+      "avg_price_cents": 50,
+      "opened_at": "2026-03-02T16:30:05.535990",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR03-B45.5",
+      "side": "no",
+      "contracts": 19,
+      "avg_price_cents": 68,
+      "opened_at": "2026-03-02T16:30:05.592092",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR03-B41.5",
+      "side": "no",
+      "contracts": 22,
+      "avg_price_cents": 52,
+      "opened_at": "2026-03-02T16:30:05.650683",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR02-T73",
+      "side": "yes",
+      "contracts": 325,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-02T16:30:06.295360",
+      "closed_at": "2026-03-03T20:30:04.074909",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR02-B72.5",
+      "side": "yes",
+      "contracts": 180,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-02T16:30:06.367860",
+      "closed_at": "2026-03-03T20:30:04.126812",
+      "close_price_cents": 0,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR03-B73.5",
+      "side": "yes",
+      "contracts": 232,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-02T16:30:06.975893",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR03-B71.5",
+      "side": "yes",
+      "contracts": 70,
+      "avg_price_cents": 4,
+      "opened_at": "2026-03-02T16:30:07.033851",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR03-B69.5",
+      "side": "no",
+      "contracts": 24,
+      "avg_price_cents": 48,
+      "opened_at": "2026-03-02T16:30:07.087549",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR03-B67.5",
+      "side": "no",
+      "contracts": 21,
+      "avg_price_cents": 53,
+      "opened_at": "2026-03-02T16:30:07.150376",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR03-T67",
+      "side": "no",
+      "contracts": 18,
+      "avg_price_cents": 74,
+      "opened_at": "2026-03-02T16:30:07.211460",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR03-T54",
+      "side": "yes",
+      "contracts": 180,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-02T16:30:09.666002",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR03-B49.5",
+      "side": "no",
+      "contracts": 21,
+      "avg_price_cents": 50,
+      "opened_at": "2026-03-02T16:30:09.723934",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR03-B51.5",
+      "side": "no",
+      "contracts": 21,
+      "avg_price_cents": 50,
+      "opened_at": "2026-03-02T16:30:09.771274",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR03-B47.5",
+      "side": "no",
+      "contracts": 20,
+      "avg_price_cents": 55,
+      "opened_at": "2026-03-02T16:30:09.831843",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR03-T47",
+      "side": "no",
+      "contracts": 18,
+      "avg_price_cents": 72,
+      "opened_at": "2026-03-02T16:30:09.892164",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR03-T85",
+      "side": "yes",
+      "contracts": 147,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-02T16:30:11.074035",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR03-B89.5",
+      "side": "no",
+      "contracts": 23,
+      "avg_price_cents": 46,
+      "opened_at": "2026-03-02T16:30:11.138438",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR03-B85.5",
+      "side": "yes",
+      "contracts": 45,
+      "avg_price_cents": 2,
+      "opened_at": "2026-03-02T16:30:11.197960",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR03-B87.5",
+      "side": "no",
+      "contracts": 23,
+      "avg_price_cents": 44,
+      "opened_at": "2026-03-02T16:30:11.267934",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR04-T48",
+      "side": "yes",
+      "contracts": 367,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-03T16:30:03.841305",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR04-B48.5",
+      "side": "yes",
+      "contracts": 157,
+      "avg_price_cents": 6,
+      "opened_at": "2026-03-03T16:30:03.906158",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR04-B50.5",
+      "side": "no",
+      "contracts": 64,
+      "avg_price_cents": 56,
+      "opened_at": "2026-03-03T16:30:03.959977",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR04-B52.5",
+      "side": "no",
+      "contracts": 54,
+      "avg_price_cents": 70,
+      "opened_at": "2026-03-03T16:30:04.019175",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR03-B41.5",
+      "side": "yes",
+      "contracts": 61,
+      "avg_price_cents": 15,
+      "opened_at": "2026-03-03T16:30:04.642984",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR04-B40.5",
+      "side": "yes",
+      "contracts": 881,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-03T16:30:05.226628",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR04-B42.5",
+      "side": "yes",
+      "contracts": 400,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-03T16:30:05.274679",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR04-T47",
+      "side": "no",
+      "contracts": 71,
+      "avg_price_cents": 49,
+      "opened_at": "2026-03-03T16:30:05.326040",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHCHI-26MAR04-B46.5",
+      "side": "no",
+      "contracts": 60,
+      "avg_price_cents": 56,
+      "opened_at": "2026-03-03T16:30:05.379242",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR03-B69.5",
+      "side": "yes",
+      "contracts": 93,
+      "avg_price_cents": 10,
+      "opened_at": "2026-03-03T16:30:06.028865",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR04-T71",
+      "side": "yes",
+      "contracts": 339,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-03T16:30:06.649414",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR04-B70.5",
+      "side": "yes",
+      "contracts": 169,
+      "avg_price_cents": 13,
+      "opened_at": "2026-03-03T16:30:06.709512",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR04-B66.5",
+      "side": "no",
+      "contracts": 58,
+      "avg_price_cents": 57,
+      "opened_at": "2026-03-03T16:30:06.768308",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR04-B68.5",
+      "side": "no",
+      "contracts": 62,
+      "avg_price_cents": 51,
+      "opened_at": "2026-03-03T16:30:06.827917",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR03-B53.5",
+      "side": "no",
+      "contracts": 48,
+      "avg_price_cents": 63,
+      "opened_at": "2026-03-03T16:30:08.534531",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR04-T63",
+      "side": "yes",
+      "contracts": 89,
+      "avg_price_cents": 32,
+      "opened_at": "2026-03-03T16:30:09.133151",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR04-B63.5",
+      "side": "no",
+      "contracts": 58,
+      "avg_price_cents": 62,
+      "opened_at": "2026-03-03T16:30:09.190876",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR04-B65.5",
+      "side": "no",
+      "contracts": 55,
+      "avg_price_cents": 66,
+      "opened_at": "2026-03-03T16:30:09.238275",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR04-T82",
+      "side": "yes",
+      "contracts": 339,
+      "avg_price_cents": 1,
+      "opened_at": "2026-03-03T16:30:10.440685",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR04-B84.5",
+      "side": "no",
+      "contracts": 66,
+      "avg_price_cents": 47,
+      "opened_at": "2026-03-03T16:30:10.495883",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    },
+    {
+      "ticker": "KXHIGHAUS-26MAR04-B86.5",
+      "side": "no",
+      "contracts": 55,
+      "avg_price_cents": 53,
+      "opened_at": "2026-03-03T16:30:10.553463",
+      "closed_at": null,
+      "close_price_cents": null,
+      "mode": "paper"
+    }
+  ]
+}

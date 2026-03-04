@@ -1,0 +1,780 @@
+--- 2026-02-23T13:57:19 --- auto ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:617: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+[PAPER TRADING] Virtual $1000 account — no real money
+  BUY: KXHIGHNY-26FEB23-T40 no x70 @ 71¢ (edge=+39.4%)
+  BUY: KXHIGHNY-26FEB23-T33 yes x86 @ 58¢ (edge=+15.1%)
+  BUY: KXHIGHNY-26FEB24-B28.5 yes x139 @ 30¢ (edge=+39.1%)
+  BUY: KXHIGHNY-26FEB24-T35 no x61 @ 81¢ (edge=+22.2%)
+  BUY: KXHIGHCHI-26FEB24-B40.5 no x67 @ 74¢ (edge=+15.8%)
+  BUY: KXHIGHDEN-26FEB24-B66.5 no x67 @ 74¢ (edge=+33.8%)
+  BUY: KXHIGHAUS-26FEB24-B73.5 no x64 @ 78¢ (edge=+12.8%)
+
+=== AUTO-TRADE SUMMARY ===
+  Edges found:    7
+  Trades placed:  7
+  Skipped (held): 0
+  Skipped (err):  0
+  Open positions: 7
+  Balance:        $660.23
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-02-23T16:30:01 --- auto ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/cron.sh: line 18: uv: command not found
+--- 2026-02-23T20:30:01 --- auto-settle ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/cron.sh: line 18: uv: command not found
+--- 2026-02-24T16:30:01 --- auto ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/cron.sh: line 18: uv: command not found
+--- 2026-02-24T17:24:15 --- auto-settle ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:512: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHNY-26FEB24-B28.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB24-T35: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB24-B40.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB24-B66.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26FEB24-B73.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB24-B30.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB24-T28: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB24-B32.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB25-B37.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB25-B35.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB25-T40: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB25-B33.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB24-B71.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB24-B73.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB25-B73.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB24-B70.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB25-B65.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26FEB24-B75.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26FEB25-B86.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26FEB25-B84.5: not settled yet (status=active), skipping
+
+Settled 0/20 positions. Balance: $256.10
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-02-24T17:24:22 --- auto ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:617: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+[PAPER TRADING] Virtual $1000 account — no real money
+  SKIP (held): KXHIGHNY-26FEB24-B30.5 yes
+  SKIP (held): KXHIGHNY-26FEB24-T28 yes
+  SKIP (held): KXHIGHNY-26FEB24-B32.5 no
+  SKIP (held): KXHIGHCHI-26FEB25-B37.5 yes
+  SKIP (held): KXHIGHCHI-26FEB25-B35.5 yes
+  SKIP (held): KXHIGHCHI-26FEB25-T40 no
+  SKIP (held): KXHIGHCHI-26FEB25-B33.5 no
+  SKIP (held): KXHIGHLAX-26FEB24-B71.5 yes
+  SKIP (held): KXHIGHLAX-26FEB24-B73.5 yes
+  SKIP (held): KXHIGHLAX-26FEB25-B73.5 yes
+  SKIP (held): KXHIGHDEN-26FEB24-B70.5 no
+  SKIP (held): KXHIGHDEN-26FEB24-B66.5 no
+  SKIP (held): KXHIGHDEN-26FEB25-B65.5 no
+  SKIP (held): KXHIGHAUS-26FEB24-B75.5 no
+  SKIP (held): KXHIGHAUS-26FEB25-B86.5 no
+  SKIP (held): KXHIGHAUS-26FEB25-B84.5 no
+
+=== AUTO-TRADE SUMMARY ===
+  Edges found:    16
+  Trades placed:  0
+  Skipped (held): 16
+  Skipped (err):  0
+  Open positions: 20
+  Balance:        $256.10
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-02-24T20:30:01 --- auto-settle ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:512: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHNY-26FEB24-B28.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB24-T35: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB24-B40.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB24-B66.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26FEB24-B73.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB24-B30.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB24-T28: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB24-B32.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB25-B37.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB25-B35.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB25-T40: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB25-B33.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB24-B71.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB24-B73.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB25-B73.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB24-B70.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB25-B65.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26FEB24-B75.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26FEB25-B86.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26FEB25-B84.5: not settled yet (status=active), skipping
+
+Settled 0/20 positions. Balance: $256.10
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-02-25T16:30:01 --- auto ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:617: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+[PAPER TRADING] Virtual $1000 account — no real money
+  BUY: KXHIGHNY-26FEB25-B43.5 no x14 @ 87¢ (edge=+13.8%)
+  SKIP (held): KXHIGHCHI-26FEB25-T40 no
+  SKIP (held): KXHIGHCHI-26FEB25-B35.5 yes
+  SKIP (held): KXHIGHLAX-26FEB25-B73.5 yes
+  BUY: KXHIGHLAX-26FEB25-B75.5 yes x11 @ 6¢ (edge=+17.6%)
+  BUY: KXHIGHLAX-26FEB26-T76 no x25 @ 50¢ (edge=+91.8%)
+  SKIP (held): KXHIGHDEN-26FEB25-B65.5 no
+
+=== AUTO-TRADE SUMMARY ===
+  Edges found:    7
+  Trades placed:  3
+  Skipped (held): 4
+  Skipped (err):  0
+  Open positions: 23
+  Balance:        $230.76
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-02-25T20:30:01 --- auto-settle ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:512: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHCHI-26FEB25-B37.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB25-B35.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB25-T40: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB25-B33.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB25-B73.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB25-B65.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26FEB25-B86.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26FEB25-B84.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB25-B43.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB25-B75.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB26-T76: not settled yet (status=active), skipping
+
+Settled 0/11 positions. Balance: $4129.76
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-02-26T16:30:01 --- auto ---
+  ERROR buying KXHIGHDEN-26FEB27-B67.5: Insufficient paper balance: need $206.36, have $0.56
+  ERROR buying KXHIGHDEN-26FEB27-B69.5: Insufficient paper balance: need $206.31, have $0.56
+  ERROR buying KXHIGHDEN-26FEB27-B65.5: Insufficient paper balance: need $206.36, have $0.56
+  ERROR buying KXHIGHAUS-26FEB26-B84.5: Insufficient paper balance: need $206.46, have $0.56
+  ERROR buying KXHIGHAUS-26FEB26-B88.5: Insufficient paper balance: need $206.08, have $0.56
+  ERROR buying KXHIGHAUS-26FEB26-B86.5: Insufficient paper balance: need $200.32, have $0.56
+  ERROR buying KXHIGHAUS-26FEB27-T83: Insufficient paper balance: need $206.45, have $0.56
+  ERROR buying KXHIGHAUS-26FEB27-B83.5: Insufficient paper balance: need $95.55, have $0.56
+  ERROR buying KXHIGHAUS-26FEB27-B87.5: Insufficient paper balance: need $205.86, have $0.56
+  ERROR buying KXHIGHAUS-26FEB27-B85.5: Insufficient paper balance: need $206.36, have $0.56
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:617: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+[PAPER TRADING] Virtual $1000 account — no real money
+  BUY: KXHIGHNY-26FEB26-T43 no x1147 @ 18¢ (edge=+450.0%)
+  BUY: KXHIGHNY-26FEB26-B42.5 no x254 @ 81¢ (edge=+22.2%)
+  BUY: KXHIGHNY-26FEB27-B40.5 no x317 @ 65¢ (edge=+50.0%)
+  BUY: KXHIGHNY-26FEB27-B42.5 no x261 @ 79¢ (edge=+25.3%)
+  BUY: KXHIGHNY-26FEB27-B44.5 no x258 @ 80¢ (edge=+23.7%)
+  BUY: KXHIGHNY-26FEB27-B38.5 yes x265 @ 15¢ (edge=+21.8%)
+  BUY: KXHIGHCHI-26FEB26-B40.5 yes x1474 @ 14¢ (edge=+132.5%)
+  BUY: KXHIGHCHI-26FEB26-B44.5 no x362 @ 57¢ (edge=+73.7%)
+  BUY: KXHIGHCHI-26FEB26-B42.5 no x317 @ 65¢ (edge=+47.8%)
+  BUY: KXHIGHCHI-26FEB27-T60 yes x1086 @ 19¢ (edge=+421.1%)
+  BUY: KXHIGHCHI-26FEB27-B62.5 no x282 @ 73¢ (edge=+35.6%)
+  BUY: KXHIGHCHI-26FEB27-B60.5 no x264 @ 78¢ (edge=+26.9%)
+  BUY: KXHIGHCHI-26FEB27-B64.5 no x261 @ 79¢ (edge=+25.3%)
+  SKIP (held): KXHIGHLAX-26FEB26-T76 no
+  BUY: KXHIGHLAX-26FEB27-T83 yes x2581 @ 8¢ (edge=+508.2%)
+  BUY: KXHIGHLAX-26FEB27-B82.5 yes x573 @ 30¢ (edge=+38.9%)
+  BUY: KXHIGHLAX-26FEB27-B80.5 no x299 @ 69¢ (edge=+32.3%)
+  BUY: KXHIGHLAX-26FEB27-B78.5 no x275 @ 75¢ (edge=+32.0%)
+  BUY: KXHIGHDEN-26FEB26-B61.5 no x349 @ 59¢ (edge=+67.8%)
+  BUY: KXHIGHDEN-26FEB26-B63.5 no x290 @ 71¢ (edge=+39.4%)
+  BUY: KXHIGHDEN-26FEB26-B59.5 no x240 @ 86¢ (edge=+15.1%)
+  BUY: KXHIGHDEN-26FEB27-T65 yes x1720 @ 12¢ (edge=+725.0%)
+
+=== AUTO-TRADE SUMMARY ===
+  Edges found:    32
+  Trades placed:  21
+  Skipped (held): 1
+  Skipped (err):  10
+  Open positions: 32
+  Balance:        $0.56
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-02-26T20:30:01 --- auto-settle ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:512: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHLAX-26FEB26-T76: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB26-T43: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB26-B42.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B40.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B42.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B44.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B38.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB26-B40.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB26-B44.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB26-B42.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-T60: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B62.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B60.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B64.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-T83: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B82.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B80.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B78.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB26-B61.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB26-B63.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB26-B59.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-T65: not settled yet (status=active), skipping
+
+Settled 0/22 positions. Balance: $393.56
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-02-27T16:30:01 --- auto ---
+  ERROR buying KXHIGHAUS-26FEB27-B83.5: Insufficient paper balance: need $79.87, have $13.70
+  ERROR buying KXHIGHAUS-26FEB27-B87.5: Insufficient paper balance: need $79.91, have $13.70
+  ERROR buying KXHIGHAUS-26FEB27-B85.5: Insufficient paper balance: need $79.75, have $13.70
+  ERROR buying KXHIGHAUS-26FEB28-T84: Insufficient paper balance: need $79.75, have $13.70
+  ERROR buying KXHIGHAUS-26FEB28-B86.5: Insufficient paper balance: need $79.35, have $13.70
+  ERROR buying KXHIGHAUS-26FEB28-B88.5: Insufficient paper balance: need $79.20, have $13.70
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:617: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+[PAPER TRADING] Virtual $1000 account — no real money
+  SKIP (held): KXHIGHNY-26FEB27-B44.5 no
+  BUY: KXHIGHNY-26FEB27-T45 no x131 @ 61¢ (edge=+62.3%)
+  SKIP (held): KXHIGHNY-26FEB27-B42.5 no
+  BUY: KXHIGHNY-26FEB28-T50 yes x257 @ 31¢ (edge=+94.0%)
+  BUY: KXHIGHNY-26FEB28-B52.5 no x108 @ 74¢ (edge=+28.9%)
+  SKIP (held): KXHIGHCHI-26FEB27-T60 yes
+  SKIP (held): KXHIGHCHI-26FEB27-B62.5 no
+  SKIP (held): KXHIGHCHI-26FEB27-B64.5 no
+  SKIP (held): KXHIGHCHI-26FEB27-B60.5 no
+  BUY: KXHIGHCHI-26FEB28-T48 yes x1141 @ 7¢ (edge=+1314.3%)
+  BUY: KXHIGHCHI-26FEB28-B43.5 no x115 @ 69¢ (edge=+43.5%)
+  BUY: KXHIGHCHI-26FEB28-B45.5 no x101 @ 79¢ (edge=+25.3%)
+  BUY: KXHIGHCHI-26FEB28-B41.5 no x98 @ 81¢ (edge=+22.2%)
+  BUY: KXHIGHCHI-26FEB28-T41 no x87 @ 91¢ (edge=+8.8%)
+  SKIP (held): KXHIGHLAX-26FEB27-B82.5 yes
+  BUY: KXHIGHLAX-26FEB27-T83 no x300 @ 24¢ (edge=+57.2%)
+  BUY: KXHIGHLAX-26FEB28-T80 yes x296 @ 27¢ (edge=+252.5%)
+  BUY: KXHIGHLAX-26FEB28-B77.5 no x115 @ 69¢ (edge=+43.5%)
+  BUY: KXHIGHLAX-26FEB28-B75.5 no x97 @ 82¢ (edge=+20.7%)
+  BUY: KXHIGHLAX-26FEB28-B79.5 no x99 @ 80¢ (edge=+20.2%)
+  SKIP (held): KXHIGHDEN-26FEB27-T65 yes
+  BUY: KXHIGHDEN-26FEB27-B67.5 no x131 @ 61¢ (edge=+62.3%)
+  BUY: KXHIGHDEN-26FEB27-B69.5 no x111 @ 72¢ (edge=+37.5%)
+  BUY: KXHIGHDEN-26FEB27-B65.5 no x99 @ 80¢ (edge=+23.7%)
+  BUY: KXHIGHDEN-26FEB28-B70.5 no x117 @ 68¢ (edge=+45.6%)
+  BUY: KXHIGHDEN-26FEB28-B68.5 no x111 @ 72¢ (edge=+37.5%)
+  BUY: KXHIGHDEN-26FEB28-B66.5 no x98 @ 81¢ (edge=+22.2%)
+  BUY: KXHIGHDEN-26FEB28-T71 no x94 @ 85¢ (edge=+16.5%)
+
+=== AUTO-TRADE SUMMARY ===
+  Edges found:    34
+  Trades placed:  20
+  Skipped (held): 8
+  Skipped (err):  6
+  Open positions: 33
+  Balance:        $13.70
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-02-27T20:30:01 --- auto-settle ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:512: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHNY-26FEB27-B40.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B42.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B44.5: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-B38.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-T60: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B62.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B60.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB27-B64.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-T83: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B82.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B80.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-B78.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-T65: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB27-T45: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB28-T50: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB28-B52.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-T48: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-B43.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-B45.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-B41.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-T41: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-T83: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-T80: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B77.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B75.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B79.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-B67.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-B69.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-B65.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-B70.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-B68.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-B66.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-T71: not settled yet (status=active), skipping
+
+Settled 0/33 positions. Balance: $13.70
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-02-28T16:30:01 --- auto ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:617: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+[PAPER TRADING] Virtual $1000 account — no real money
+  SKIP (held): KXHIGHNY-26FEB28-T50 yes
+  BUY: KXHIGHNY-26FEB28-B50.5 no x1 @ 59¢ (edge=+63.8%)
+  SKIP (held): KXHIGHNY-26FEB28-B52.5 no
+  BUY: KXHIGHNY-26MAR01-B42.5 yes x4 @ 14¢ (edge=+198.5%)
+  BUY: KXHIGHNY-26MAR01-B44.5 yes x1 @ 6¢ (edge=+46.5%)
+  BUY: KXHIGHNY-26MAR01-B38.5 no x1 @ 67¢ (edge=+38.1%)
+  BUY: KXHIGHCHI-26MAR01-T29 yes x6 @ 10¢ (edge=+788.6%)
+  BUY: KXHIGHCHI-26MAR01-B31.5 no x1 @ 68¢ (edge=+45.6%)
+  BUY: KXHIGHLAX-26FEB28-B79.5 yes x2 @ 23¢ (edge=+74.5%)
+  BUY: KXHIGHLAX-26FEB28-T80 no x2 @ 30¢ (edge=+62.6%)
+  BUY: KXHIGHLAX-26MAR01-T78 yes x8 @ 8¢ (edge=+1044.9%)
+  SKIP (held): KXHIGHDEN-26FEB28-B68.5 no
+  SKIP (held): KXHIGHDEN-26FEB28-B70.5 no
+  SKIP (held): KXHIGHDEN-26FEB28-B66.5 no
+  BUY: KXHIGHDEN-26MAR01-T61 yes x5 @ 13¢ (edge=+206.3%)
+  BUY: KXHIGHDEN-26MAR01-B61.5 yes x3 @ 21¢ (edge=+109.9%)
+  BUY: KXHIGHAUS-26FEB28-B86.5 no x1 @ 41¢ (edge=+123.3%)
+  BUY: KXHIGHAUS-26MAR01-T81 yes x4 @ 14¢ (edge=+267.4%)
+  BUY: KXHIGHAUS-26MAR01-B81.5 yes x2 @ 21¢ (edge=+54.4%)
+  BUY: KXHIGHAUS-26MAR01-B83.5 no x1 @ 63¢ (edge=+37.3%)
+
+=== AUTO-TRADE SUMMARY ===
+  Edges found:    31
+  Trades placed:  15
+  Skipped (held): 5
+  Skipped (err):  0
+  Open positions: 48
+  Balance:        $5.54
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-02-28T20:30:01 --- auto-settle ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:512: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHNY-26FEB27-B40.5 NO: Kalshi=no → WON (P&L: $+110.95)
+  KXHIGHNY-26FEB27-B42.5 NO: Kalshi=no → WON (P&L: $+54.81)
+  KXHIGHNY-26FEB27-B44.5 NO: Kalshi=yes → LOST (P&L: $-206.40)
+  KXHIGHNY-26FEB27-B38.5 YES: Kalshi=no → LOST (P&L: $-39.75)
+  KXHIGHCHI-26FEB27-T60 YES: Kalshi=no → LOST (P&L: $-206.34)
+  KXHIGHCHI-26FEB27-B62.5 NO: Kalshi=no → WON (P&L: $+76.14)
+  KXHIGHCHI-26FEB27-B60.5 NO: Kalshi=no → WON (P&L: $+58.08)
+  KXHIGHCHI-26FEB27-B64.5 NO: Kalshi=yes → LOST (P&L: $-206.19)
+  KXHIGHLAX-26FEB27-T83 YES: Kalshi=yes → WON (P&L: $+2374.52)
+  KXHIGHLAX-26FEB27-B82.5 YES: Kalshi=no → LOST (P&L: $-171.90)
+  KXHIGHLAX-26FEB27-B80.5 NO: Kalshi=no → WON (P&L: $+92.69)
+  KXHIGHLAX-26FEB27-B78.5 NO: Kalshi=no → WON (P&L: $+68.75)
+  KXHIGHDEN-26FEB27-T65 YES: Kalshi=no → LOST (P&L: $-206.40)
+  KXHIGHNY-26FEB27-T45 NO: Kalshi=no → WON (P&L: $+51.09)
+  KXHIGHNY-26FEB28-T50: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB28-B52.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-T48: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-B43.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-B45.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-B41.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26FEB28-T41: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB27-T83 NO: Kalshi=yes → LOST (P&L: $-72.00)
+  KXHIGHLAX-26FEB28-T80: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B77.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B75.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B79.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB27-B67.5 NO: Kalshi=no → WON (P&L: $+51.09)
+  KXHIGHDEN-26FEB27-B69.5 NO: Kalshi=no → WON (P&L: $+31.08)
+  KXHIGHDEN-26FEB27-B65.5 NO: Kalshi=yes → LOST (P&L: $-79.20)
+  KXHIGHDEN-26FEB28-B70.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-B68.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-B66.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-T71: not settled yet (status=active), skipping
+  KXHIGHNY-26FEB28-B50.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR01-B42.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR01-B44.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR01-B38.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR01-T29: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR01-B31.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B79.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-T80: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR01-T78: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR01-T61: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR01-B61.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26FEB28-B86.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR01-T81: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR01-B81.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR01-B83.5: not settled yet (status=active), skipping
+
+Settled 18/48 positions. Balance: $4657.54
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-03-01T16:30:01 --- auto ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:653: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+[PAPER TRADING] Virtual $1000 account — no real money
+  BUY: KXHIGHNY-26MAR01-B42.5 no x149 @ 1¢ (edge=+607.1%)
+  BUY: KXHIGHNY-26MAR01-B44.5 no x24 @ 74¢ (edge=+15.1%)
+  BUY: KXHIGHNY-26MAR02-B30.5 yes x76 @ 3¢ (edge=+55.1%)
+  BUY: KXHIGHNY-26MAR02-B32.5 yes x22 @ 13¢ (edge=+14.4%)
+  BUY: KXHIGHNY-26MAR02-T35 no x23 @ 70¢ (edge=+12.5%)
+  BUY: KXHIGHNY-26MAR02-B34.5 no x26 @ 66¢ (edge=+12.2%)
+  SKIP (held): KXHIGHCHI-26MAR01-B29.5 yes
+  SKIP (held): KXHIGHCHI-26MAR01-B33.5 no
+  SKIP (held): KXHIGHCHI-26MAR01-B31.5 no
+  SKIP (held): KXHIGHCHI-26MAR01-B35.5 no
+  BUY: KXHIGHCHI-26MAR02-T40 yes x231 @ 1¢ (edge=+608.1%)
+  BUY: KXHIGHCHI-26MAR02-B40.5 yes x189 @ 1¢ (edge=+175.2%)
+  BUY: KXHIGHCHI-26MAR02-B44.5 no x27 @ 62¢ (edge=+30.3%)
+  BUY: KXHIGHCHI-26MAR02-B46.5 no x26 @ 61¢ (edge=+23.7%)
+  BUY: KXHIGHCHI-26MAR02-T47 no x25 @ 67¢ (edge=+22.2%)
+  BUY: KXHIGHCHI-26MAR02-B42.5 no x25 @ 57¢ (edge=+14.5%)
+  SKIP (held): KXHIGHLAX-26MAR01-T78 yes
+  SKIP (held): KXHIGHLAX-26MAR01-B75.5 no
+  BUY: KXHIGHLAX-26MAR01-B77.5 yes x29 @ 3¢ (edge=+23.1%)
+  SKIP (held): KXHIGHLAX-26MAR01-B73.5 no
+  BUY: KXHIGHLAX-26MAR02-B68.5 no x32 @ 49¢ (edge=+54.7%)
+  BUY: KXHIGHLAX-26MAR02-B66.5 no x26 @ 50¢ (edge=+26.9%)
+  BUY: KXHIGHLAX-26MAR02-B70.5 no x26 @ 59¢ (edge=+23.7%)
+  BUY: KXHIGHLAX-26MAR02-B72.5 no x22 @ 73¢ (edge=+8.8%)
+  SKIP (held): KXHIGHDEN-26MAR01-T61 yes
+  SKIP (held): KXHIGHDEN-26MAR01-B63.5 no
+  SKIP (held): KXHIGHDEN-26MAR01-B61.5 yes
+  SKIP (held): KXHIGHDEN-26MAR01-B65.5 no
+  BUY: KXHIGHDEN-26MAR02-T68 yes x208 @ 1¢ (edge=+746.8%)
+  BUY: KXHIGHDEN-26MAR02-B70.5 no x30 @ 49¢ (edge=+42.7%)
+  BUY: KXHIGHDEN-26MAR02-B72.5 no x29 @ 41¢ (edge=+41.4%)
+  BUY: KXHIGHDEN-26MAR02-B74.5 no x23 @ 60¢ (edge=+10.0%)
+  SKIP (held): KXHIGHAUS-26MAR01-B81.5 yes
+  SKIP (held): KXHIGHAUS-26MAR01-B83.5 no
+  SKIP (held): KXHIGHAUS-26MAR01-B85.5 no
+  BUY: KXHIGHAUS-26MAR02-T80 yes x173 @ 1¢ (edge=+470.9%)
+  BUY: KXHIGHAUS-26MAR02-B84.5 no x31 @ 48¢ (edge=+47.8%)
+  BUY: KXHIGHAUS-26MAR02-B80.5 yes x35 @ 1¢ (edge=+27.8%)
+  BUY: KXHIGHAUS-26MAR02-B82.5 no x28 @ 42¢ (edge=+26.7%)
+  BUY: KXHIGHAUS-26MAR02-B86.5 no x22 @ 56¢ (edge=+8.8%)
+
+=== AUTO-TRADE SUMMARY ===
+  Edges found:    40
+  Trades placed:  26
+  Skipped (held): 14
+  Skipped (err):  0
+  Open positions: 52
+  Balance:        $147.50
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-03-01T20:30:01 --- auto-settle ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:531: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHNY-26MAR01-B42.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR01-B40.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR01-B38.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR01-T29: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR01-B29.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR01-B31.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR01-B33.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR01-B35.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26FEB28-B79.5 NO: Kalshi=yes → LOST (P&L: $-7.14)
+  KXHIGHLAX-26FEB28-T80 YES: Kalshi=no → LOST (P&L: $-4.16)
+  KXHIGHLAX-26MAR01-T78: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR01-B73.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR01-B71.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR01-B75.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26FEB28-B66.5 NO: Kalshi=yes → LOST (P&L: $-31.45)
+  KXHIGHDEN-26FEB28-B68.5 NO: Kalshi=no → WON (P&L: $+32.86)
+  KXHIGHDEN-26MAR01-T61: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR01-B61.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR01-B65.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR01-B63.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26FEB28-B88.5 NO: Kalshi=no → WON (P&L: $+112.52)
+  KXHIGHAUS-26FEB28-B86.5 NO: Kalshi=yes → LOST (P&L: $-6.24)
+  KXHIGHAUS-26MAR01-T81: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR01-B81.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR01-B83.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR01-B85.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR01-B42.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR01-B44.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR02-B30.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR02-B32.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR02-T35: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR02-B34.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR02-T40: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR02-B40.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR02-B44.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR02-B46.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR02-T47: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR02-B42.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR01-B77.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR02-B68.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR02-B66.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR02-B70.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR02-B72.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR02-T68: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR02-B70.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR02-B72.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR02-B74.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR02-T80: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR02-B84.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR02-B80.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR02-B82.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR02-B86.5: not settled yet (status=active), skipping
+
+Settled 6/52 positions. Balance: $325.50
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-03-02T16:30:01 --- auto ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:653: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+[PAPER TRADING] Virtual $1000 account — no real money
+  BUY: KXHIGHNY-26MAR02-B34.5 yes x95 @ 3¢ (edge=+118.2%)
+  BUY: KXHIGHNY-26MAR02-B32.5 no x38 @ 30¢ (edge=+33.0%)
+  BUY: KXHIGHNY-26MAR02-B30.5 no x19 @ 68¢ (edge=+8.7%)
+  BUY: KXHIGHNY-26MAR03-T39 yes x73 @ 1¢ (edge=+349.6%)
+  BUY: KXHIGHNY-26MAR03-B39.5 no x23 @ 51¢ (edge=+43.5%)
+  BUY: KXHIGHNY-26MAR03-B41.5 no x21 @ 58¢ (edge=+33.8%)
+  BUY: KXHIGHNY-26MAR03-B43.5 no x17 @ 68¢ (edge=+8.8%)
+  SKIP (held): KXHIGHCHI-26MAR02-T40 yes
+  SKIP (held): KXHIGHCHI-26MAR02-B44.5 no
+  SKIP (held): KXHIGHCHI-26MAR02-B42.5 no
+  BUY: KXHIGHCHI-26MAR03-T39 yes x325 @ 1¢ (edge=+765.2%)
+  BUY: KXHIGHCHI-26MAR03-B39.5 yes x135 @ 1¢ (edge=+167.3%)
+  BUY: KXHIGHCHI-26MAR03-B43.5 no x23 @ 50¢ (edge=+37.4%)
+  BUY: KXHIGHCHI-26MAR03-B45.5 no x19 @ 68¢ (edge=+20.7%)
+  BUY: KXHIGHCHI-26MAR03-B41.5 no x22 @ 52¢ (edge=+11.7%)
+  BUY: KXHIGHLAX-26MAR02-T73 yes x325 @ 1¢ (edge=+1124.8%)
+  BUY: KXHIGHLAX-26MAR02-B72.5 yes x180 @ 1¢ (edge=+272.1%)
+  SKIP (held): KXHIGHLAX-26MAR02-B68.5 no
+  SKIP (held): KXHIGHLAX-26MAR02-B66.5 no
+  SKIP (held): KXHIGHLAX-26MAR02-B70.5 no
+  BUY: KXHIGHLAX-26MAR03-B73.5 yes x232 @ 1¢ (edge=+465.4%)
+  BUY: KXHIGHLAX-26MAR03-B71.5 yes x70 @ 4¢ (edge=+83.1%)
+  BUY: KXHIGHLAX-26MAR03-B69.5 no x24 @ 48¢ (edge=+35.8%)
+  BUY: KXHIGHLAX-26MAR03-B67.5 no x21 @ 53¢ (edge=+33.8%)
+  BUY: KXHIGHLAX-26MAR03-T67 no x18 @ 74¢ (edge=+10.0%)
+  SKIP (held): KXHIGHDEN-26MAR02-B72.5 no
+  SKIP (held): KXHIGHDEN-26MAR02-B70.5 no
+  SKIP (held): KXHIGHDEN-26MAR02-B74.5 no
+  BUY: KXHIGHDEN-26MAR03-T54 yes x180 @ 1¢ (edge=+1000.0%)
+  BUY: KXHIGHDEN-26MAR03-B49.5 no x21 @ 50¢ (edge=+33.8%)
+  BUY: KXHIGHDEN-26MAR03-B51.5 no x21 @ 50¢ (edge=+28.6%)
+  BUY: KXHIGHDEN-26MAR03-B47.5 no x20 @ 55¢ (edge=+25.3%)
+  BUY: KXHIGHDEN-26MAR03-T47 no x18 @ 72¢ (edge=+13.8%)
+  SKIP (held): KXHIGHAUS-26MAR02-B80.5 yes
+  SKIP (held): KXHIGHAUS-26MAR02-B84.5 no
+  SKIP (held): KXHIGHAUS-26MAR02-B82.5 no
+  SKIP (held): KXHIGHAUS-26MAR02-B86.5 no
+  BUY: KXHIGHAUS-26MAR03-T85 yes x147 @ 1¢ (edge=+467.6%)
+  BUY: KXHIGHAUS-26MAR03-B89.5 no x23 @ 46¢ (edge=+43.5%)
+  BUY: KXHIGHAUS-26MAR03-B85.5 yes x45 @ 2¢ (edge=+43.2%)
+  BUY: KXHIGHAUS-26MAR03-B87.5 no x23 @ 44¢ (edge=+39.6%)
+
+=== AUTO-TRADE SUMMARY ===
+  Edges found:    41
+  Trades placed:  28
+  Skipped (held): 13
+  Skipped (err):  0
+  Open positions: 74
+  Balance:        $105.70
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-03-02T20:30:01 --- auto-settle ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:531: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHNY-26MAR01-B42.5 YES: Kalshi=yes → WON (P&L: $+176.70)
+  KXHIGHNY-26MAR01-B40.5 YES: Kalshi=no → LOST (P&L: $-35.04)
+  KXHIGHNY-26MAR01-B38.5 NO: Kalshi=no → WON (P&L: $+37.23)
+  KXHIGHCHI-26MAR01-T29 YES: Kalshi=no → LOST (P&L: $-5.00)
+  KXHIGHCHI-26MAR01-B29.5 YES: Kalshi=no → LOST (P&L: $-1.43)
+  KXHIGHCHI-26MAR01-B31.5 NO: Kalshi=yes → LOST (P&L: $-39.20)
+  KXHIGHCHI-26MAR01-B33.5 NO: Kalshi=no → WON (P&L: $+29.92)
+  KXHIGHCHI-26MAR01-B35.5 NO: Kalshi=no → WON (P&L: $+13.50)
+  KXHIGHLAX-26MAR01-T78 YES: Kalshi=no → LOST (P&L: $-5.55)
+  KXHIGHLAX-26MAR01-B73.5 NO: Kalshi=no → WON (P&L: $+32.90)
+  KXHIGHLAX-26MAR01-B71.5 NO: Kalshi=no → WON (P&L: $+23.94)
+  KXHIGHLAX-26MAR01-B75.5 NO: Kalshi=no → WON (P&L: $+21.60)
+  KXHIGHDEN-26MAR01-T61 YES: Kalshi=no → LOST (P&L: $-5.00)
+  KXHIGHDEN-26MAR01-B61.5 YES: Kalshi=no → LOST (P&L: $-17.50)
+  KXHIGHDEN-26MAR01-B65.5 NO: Kalshi=no → WON (P&L: $+29.25)
+  KXHIGHDEN-26MAR01-B63.5 NO: Kalshi=yes → LOST (P&L: $-39.33)
+  KXHIGHAUS-26MAR01-T81 YES: Kalshi=no → LOST (P&L: $-7.14)
+  KXHIGHAUS-26MAR01-B81.5 YES: Kalshi=no → LOST (P&L: $-8.47)
+  KXHIGHAUS-26MAR01-B83.5 NO: Kalshi=no → WON (P&L: $+52.00)
+  KXHIGHAUS-26MAR01-B85.5 NO: Kalshi=yes → LOST (P&L: $-31.36)
+  KXHIGHNY-26MAR01-B42.5 NO: Kalshi=yes → LOST (P&L: $-1.49)
+  KXHIGHNY-26MAR01-B44.5 NO: Kalshi=no → WON (P&L: $+6.24)
+  KXHIGHNY-26MAR02-B30.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR02-B32.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR02-T35: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR02-B34.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR02-T40: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR02-B40.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR02-B44.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR02-B46.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR02-T47: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR02-B42.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR01-B77.5 YES: Kalshi=yes → WON (P&L: $+28.13)
+  KXHIGHLAX-26MAR02-B68.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR02-B66.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR02-B70.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR02-B72.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR02-T68: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR02-B70.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR02-B72.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR02-B74.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR02-T80: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR02-B84.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR02-B80.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR02-B82.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR02-B86.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR02-B34.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR02-B32.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR02-B30.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR03-T39: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR03-B39.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR03-B41.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR03-B43.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR03-T39: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR03-B39.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR03-B43.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR03-B45.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR03-B41.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR02-T73: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR02-B72.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR03-B73.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR03-B71.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR03-B69.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR03-B67.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR03-T67: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR03-T54: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR03-B49.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR03-B51.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR03-B47.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR03-T47: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR03-T85: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR03-B89.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR03-B85.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR03-B87.5: not settled yet (status=active), skipping
+
+Settled 23/74 positions. Balance: $881.70
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-03-03T16:30:01 --- auto ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:653: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+[PAPER TRADING] Virtual $1000 account — no real money
+  SKIP (held): KXHIGHNY-26MAR03-T39 yes
+  SKIP (held): KXHIGHNY-26MAR03-B39.5 no
+  SKIP (held): KXHIGHNY-26MAR03-B41.5 no
+  BUY: KXHIGHNY-26MAR04-T48 yes x367 @ 1¢ (edge=+222.5%)
+  BUY: KXHIGHNY-26MAR04-B48.5 yes x157 @ 6¢ (edge=+66.2%)
+  BUY: KXHIGHNY-26MAR04-B50.5 no x64 @ 56¢ (edge=+26.8%)
+  BUY: KXHIGHNY-26MAR04-B52.5 no x54 @ 70¢ (edge=+22.2%)
+  SKIP (held): KXHIGHCHI-26MAR03-B39.5 yes
+  SKIP (held): KXHIGHCHI-26MAR03-B43.5 no
+  BUY: KXHIGHCHI-26MAR03-B41.5 yes x61 @ 15¢ (edge=+17.6%)
+  BUY: KXHIGHCHI-26MAR04-B40.5 yes x881 @ 1¢ (edge=+540.5%)
+  BUY: KXHIGHCHI-26MAR04-B42.5 yes x400 @ 1¢ (edge=+189.4%)
+  BUY: KXHIGHCHI-26MAR04-T47 no x71 @ 49¢ (edge=+59.7%)
+  BUY: KXHIGHCHI-26MAR04-B46.5 no x60 @ 56¢ (edge=+33.8%)
+  SKIP (held): KXHIGHLAX-26MAR03-B71.5 yes
+  SKIP (held): KXHIGHLAX-26MAR03-B73.5 yes
+  SKIP (held): KXHIGHLAX-26MAR03-B67.5 no
+  BUY: KXHIGHLAX-26MAR03-B69.5 yes x93 @ 10¢ (edge=+31.8%)
+  SKIP (held): KXHIGHLAX-26MAR03-T67 no
+  BUY: KXHIGHLAX-26MAR04-T71 yes x339 @ 1¢ (edge=+258.8%)
+  BUY: KXHIGHLAX-26MAR04-B70.5 yes x169 @ 13¢ (edge=+64.5%)
+  BUY: KXHIGHLAX-26MAR04-B66.5 no x58 @ 57¢ (edge=+32.0%)
+  BUY: KXHIGHLAX-26MAR04-B68.5 no x62 @ 51¢ (edge=+29.2%)
+  SKIP (held): KXHIGHDEN-26MAR03-B49.5 no
+  SKIP (held): KXHIGHDEN-26MAR03-B47.5 no
+  SKIP (held): KXHIGHDEN-26MAR03-B51.5 no
+  BUY: KXHIGHDEN-26MAR03-B53.5 no x48 @ 63¢ (edge=+10.0%)
+  BUY: KXHIGHDEN-26MAR04-T63 yes x89 @ 32¢ (edge=+102.0%)
+  BUY: KXHIGHDEN-26MAR04-B63.5 no x58 @ 62¢ (edge=+32.0%)
+  BUY: KXHIGHDEN-26MAR04-B65.5 no x55 @ 66¢ (edge=+25.3%)
+  SKIP (held): KXHIGHAUS-26MAR03-B85.5 yes
+  SKIP (held): KXHIGHAUS-26MAR03-B89.5 no
+  SKIP (held): KXHIGHAUS-26MAR03-B87.5 no
+  BUY: KXHIGHAUS-26MAR04-T82 yes x339 @ 1¢ (edge=+442.5%)
+  BUY: KXHIGHAUS-26MAR04-B84.5 no x66 @ 47¢ (edge=+47.2%)
+  BUY: KXHIGHAUS-26MAR04-B86.5 no x55 @ 53¢ (edge=+23.7%)
+
+=== AUTO-TRADE SUMMARY ===
+  Edges found:    36
+  Trades placed:  21
+  Skipped (held): 15
+  Skipped (err):  0
+  Open positions: 72
+  Balance:        $410.74
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
+--- 2026-03-03T20:30:01 --- auto-settle ---
+/home/morpheus/Hackstuff/kalshiweather/scripts/kalshi.py:531: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "timestamp": datetime.utcnow().isoformat(),
+  KXHIGHNY-26MAR02-B30.5 YES: Kalshi=no → LOST (P&L: $-2.28)
+  KXHIGHNY-26MAR02-B32.5 YES: Kalshi=yes → WON (P&L: $+19.14)
+  KXHIGHNY-26MAR02-T35 NO: Kalshi=no → WON (P&L: $+6.90)
+  KXHIGHNY-26MAR02-B34.5 NO: Kalshi=no → WON (P&L: $+8.84)
+  KXHIGHCHI-26MAR02-T40 YES: Kalshi=no → LOST (P&L: $-2.31)
+  KXHIGHCHI-26MAR02-B40.5 YES: Kalshi=yes → WON (P&L: $+187.11)
+  KXHIGHCHI-26MAR02-B44.5 NO: Kalshi=no → WON (P&L: $+10.26)
+  KXHIGHCHI-26MAR02-B46.5 NO: Kalshi=no → WON (P&L: $+10.14)
+  KXHIGHCHI-26MAR02-T47 NO: Kalshi=no → WON (P&L: $+8.25)
+  KXHIGHCHI-26MAR02-B42.5 NO: Kalshi=no → WON (P&L: $+10.75)
+  KXHIGHLAX-26MAR02-B68.5 NO: Kalshi=no → WON (P&L: $+16.32)
+  KXHIGHLAX-26MAR02-B66.5 NO: Kalshi=no → WON (P&L: $+13.00)
+  KXHIGHLAX-26MAR02-B70.5 NO: Kalshi=no → WON (P&L: $+10.66)
+  KXHIGHLAX-26MAR02-B72.5 NO: Kalshi=no → WON (P&L: $+5.94)
+  KXHIGHDEN-26MAR02-T68 YES: Kalshi=no → LOST (P&L: $-2.08)
+  KXHIGHDEN-26MAR02-B70.5 NO: Kalshi=yes → LOST (P&L: $-14.70)
+  KXHIGHDEN-26MAR02-B72.5 NO: Kalshi=no → WON (P&L: $+17.11)
+  KXHIGHDEN-26MAR02-B74.5 NO: Kalshi=no → WON (P&L: $+9.20)
+  KXHIGHAUS-26MAR02-T80 YES: Kalshi=no → LOST (P&L: $-1.73)
+  KXHIGHAUS-26MAR02-B84.5 NO: Kalshi=no → WON (P&L: $+16.12)
+  KXHIGHAUS-26MAR02-B80.5 YES: Kalshi=no → LOST (P&L: $-0.35)
+  KXHIGHAUS-26MAR02-B82.5 NO: Kalshi=no → WON (P&L: $+16.24)
+  KXHIGHAUS-26MAR02-B86.5 NO: Kalshi=yes → LOST (P&L: $-12.32)
+  KXHIGHNY-26MAR02-B34.5 YES: Kalshi=no → LOST (P&L: $-2.85)
+  KXHIGHNY-26MAR02-B32.5 NO: Kalshi=yes → LOST (P&L: $-11.40)
+  KXHIGHNY-26MAR02-B30.5 NO: Kalshi=no → WON (P&L: $+6.08)
+  KXHIGHNY-26MAR03-T39: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR03-B39.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR03-B41.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR03-B43.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR03-T39: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR03-B39.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR03-B43.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR03-B45.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR03-B41.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR02-T73 YES: Kalshi=no → LOST (P&L: $-3.25)
+  KXHIGHLAX-26MAR02-B72.5 YES: Kalshi=no → LOST (P&L: $-1.80)
+  KXHIGHLAX-26MAR03-B73.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR03-B71.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR03-B69.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR03-B67.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR03-T67: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR03-T54: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR03-B49.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR03-B51.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR03-B47.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR03-T47: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR03-T85: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR03-B89.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR03-B85.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR03-B87.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR04-T48: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR04-B48.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR04-B50.5: not settled yet (status=active), skipping
+  KXHIGHNY-26MAR04-B52.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR03-B41.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR04-B40.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR04-B42.5: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR04-T47: not settled yet (status=active), skipping
+  KXHIGHCHI-26MAR04-B46.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR03-B69.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR04-T71: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR04-B70.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR04-B66.5: not settled yet (status=active), skipping
+  KXHIGHLAX-26MAR04-B68.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR03-B53.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR04-T63: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR04-B63.5: not settled yet (status=active), skipping
+  KXHIGHDEN-26MAR04-B65.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR04-T82: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR04-B84.5: not settled yet (status=active), skipping
+  KXHIGHAUS-26MAR04-B86.5: not settled yet (status=active), skipping
+
+Settled 28/72 positions. Balance: $1009.74
+
+Status written to /home/morpheus/.openclaw/kalshi-weather/last-run.json
