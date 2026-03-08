@@ -1,14 +1,14 @@
 # Kalshi Weather Bot — Paper Trading Results
-# Generated: 2026-03-03
+# Generated: 2026-03-08
 # $1,000 initial balance | GFS 31-member ensemble vs Kalshi market prices
+# Running since: 2026-02-28
 
-Cash Balance:    $1009.74
-Equity:          $1668.28
-Total P&L:       $+668.28 (+66.8%)
-Open Positions:  44
-Closed Trades:   57
-
-Settled Record:  30W / 27L
+Cash Balance:    $1053.43
+Equity:          $2591.89
+Total P&L:       $+1591.89 (+159.2%)
+Open Positions:  41
+Closed Trades:   150
+Win/Loss:        76W / 74L (51% win rate)
 
 =========================================================================================================
 SETTLED TRADES
@@ -70,55 +70,145 @@ KXHIGHAUS-26MAR02-B86.5                  no      22    56c       0c $   -12.32  
 KXHIGHNY-26MAR02-B34.5                   yes     95     3c       0c $    -2.85  2026-03-02 -> 2026-03-03
 KXHIGHNY-26MAR02-B32.5                   no      38    30c       0c $   -11.40  2026-03-02 -> 2026-03-03
 KXHIGHNY-26MAR02-B30.5                   no      19    68c     100c $    +6.08  2026-03-02 -> 2026-03-03
+KXHIGHNY-26MAR03-T39                     yes     73     1c     100c $   +72.27  2026-03-02 -> 2026-03-04
+KXHIGHNY-26MAR03-B39.5                   no      23    51c     100c $   +11.27  2026-03-02 -> 2026-03-04
+KXHIGHNY-26MAR03-B41.5                   no      21    58c     100c $    +8.82  2026-03-02 -> 2026-03-04
+KXHIGHNY-26MAR03-B43.5                   no      17    68c     100c $    +5.44  2026-03-02 -> 2026-03-04
+KXHIGHCHI-26MAR03-T39                    yes    325     1c       0c $    -3.25  2026-03-02 -> 2026-03-04
+KXHIGHCHI-26MAR03-B39.5                  yes    135     1c       0c $    -1.35  2026-03-02 -> 2026-03-04
+KXHIGHCHI-26MAR03-B43.5                  no      23    50c       0c $   -11.50  2026-03-02 -> 2026-03-04
+KXHIGHCHI-26MAR03-B45.5                  no      19    68c     100c $    +6.08  2026-03-02 -> 2026-03-04
+KXHIGHCHI-26MAR03-B41.5                  no      22    52c     100c $   +10.56  2026-03-02 -> 2026-03-04
 KXHIGHLAX-26MAR02-T73                    yes    325     1c       0c $    -3.25  2026-03-02 -> 2026-03-03
 KXHIGHLAX-26MAR02-B72.5                  yes    180     1c       0c $    -1.80  2026-03-02 -> 2026-03-03
+KXHIGHLAX-26MAR03-B73.5                  yes    232     1c       0c $    -2.32  2026-03-02 -> 2026-03-04
+KXHIGHLAX-26MAR03-B71.5                  yes     70     4c       0c $    -2.80  2026-03-02 -> 2026-03-04
+KXHIGHLAX-26MAR03-B69.5                  no      24    48c     100c $   +12.48  2026-03-02 -> 2026-03-04
+KXHIGHLAX-26MAR03-B67.5                  no      21    53c       0c $   -11.13  2026-03-02 -> 2026-03-04
+KXHIGHLAX-26MAR03-T67                    no      18    74c     100c $    +4.68  2026-03-02 -> 2026-03-04
+KXHIGHDEN-26MAR03-T54                    yes    180     1c       0c $    -1.80  2026-03-02 -> 2026-03-04
+KXHIGHDEN-26MAR03-B49.5                  no      21    50c       0c $   -10.50  2026-03-02 -> 2026-03-04
+KXHIGHDEN-26MAR03-B51.5                  no      21    50c     100c $   +10.50  2026-03-02 -> 2026-03-04
+KXHIGHDEN-26MAR03-B47.5                  no      20    55c     100c $    +9.00  2026-03-02 -> 2026-03-04
+KXHIGHDEN-26MAR03-T47                    no      18    72c     100c $    +5.04  2026-03-02 -> 2026-03-04
+KXHIGHAUS-26MAR03-T85                    yes    147     1c       0c $    -1.47  2026-03-02 -> 2026-03-04
+KXHIGHAUS-26MAR03-B89.5                  no      23    46c       0c $   -10.58  2026-03-02 -> 2026-03-04
+KXHIGHAUS-26MAR03-B85.5                  yes     45     2c       0c $    -0.90  2026-03-02 -> 2026-03-04
+KXHIGHAUS-26MAR03-B87.5                  no      23    44c     100c $   +12.88  2026-03-02 -> 2026-03-04
+KXHIGHNY-26MAR04-T48                     yes    367     1c       0c $    -3.67  2026-03-03 -> 2026-03-05
+KXHIGHNY-26MAR04-B48.5                   yes    157     6c     100c $  +147.58  2026-03-03 -> 2026-03-05
+KXHIGHNY-26MAR04-B50.5                   no      64    56c     100c $   +28.16  2026-03-03 -> 2026-03-05
+KXHIGHNY-26MAR04-B52.5                   no      54    70c     100c $   +16.20  2026-03-03 -> 2026-03-05
+KXHIGHCHI-26MAR03-B41.5                  yes     61    15c       0c $    -9.15  2026-03-03 -> 2026-03-04
+KXHIGHCHI-26MAR04-B40.5                  yes    881     1c       0c $    -8.81  2026-03-03 -> 2026-03-05
+KXHIGHCHI-26MAR04-B42.5                  yes    400     1c     100c $  +396.00  2026-03-03 -> 2026-03-05
+KXHIGHCHI-26MAR04-T47                    no      71    49c     100c $   +36.21  2026-03-03 -> 2026-03-05
+KXHIGHCHI-26MAR04-B46.5                  no      60    56c     100c $   +26.40  2026-03-03 -> 2026-03-05
+KXHIGHLAX-26MAR03-B69.5                  yes     93    10c       0c $    -9.30  2026-03-03 -> 2026-03-04
+KXHIGHLAX-26MAR04-T71                    yes    339     1c       0c $    -3.39  2026-03-03 -> 2026-03-05
+KXHIGHLAX-26MAR04-B70.5                  yes    169    13c       0c $   -21.97  2026-03-03 -> 2026-03-05
+KXHIGHLAX-26MAR04-B66.5                  no      58    57c     100c $   +24.94  2026-03-03 -> 2026-03-05
+KXHIGHLAX-26MAR04-B68.5                  no      62    51c     100c $   +30.38  2026-03-03 -> 2026-03-05
+KXHIGHDEN-26MAR03-B53.5                  no      48    63c     100c $   +17.76  2026-03-03 -> 2026-03-04
+KXHIGHDEN-26MAR04-T63                    yes     89    32c     100c $   +60.52  2026-03-03 -> 2026-03-05
+KXHIGHDEN-26MAR04-B63.5                  no      58    62c     100c $   +22.04  2026-03-03 -> 2026-03-05
+KXHIGHDEN-26MAR04-B65.5                  no      55    66c     100c $   +18.70  2026-03-03 -> 2026-03-05
+KXHIGHAUS-26MAR04-T82                    yes    339     1c       0c $    -3.39  2026-03-03 -> 2026-03-05
+KXHIGHAUS-26MAR04-B84.5                  no      66    47c     100c $   +34.98  2026-03-03 -> 2026-03-05
+KXHIGHAUS-26MAR04-B86.5                  no      55    53c     100c $   +25.85  2026-03-03 -> 2026-03-05
+KXHIGHNY-26MAR04-B48.5                   no     126    25c       0c $   -31.50  2026-03-04 -> 2026-03-05
+KXHIGHNY-26MAR05-T41                     yes    360     2c       0c $    -7.20  2026-03-04 -> 2026-03-06
+KXHIGHNY-26MAR05-B43.5                   no      78    46c     100c $   +42.12  2026-03-04 -> 2026-03-06
+KXHIGHNY-26MAR05-B41.5                   no      75    40c     100c $   +45.00  2026-03-04 -> 2026-03-06
+KXHIGHNY-26MAR05-B45.5                   no      55    76c       0c $   -41.80  2026-03-04 -> 2026-03-06
+KXHIGHCHI-26MAR04-B44.5                  yes    157    16c       0c $   -25.12  2026-03-04 -> 2026-03-05
+KXHIGHCHI-26MAR05-T45                    yes    230     5c       0c $   -11.50  2026-03-04 -> 2026-03-06
+KXHIGHCHI-26MAR05-B45.5                  yes     62     4c       0c $    -2.48  2026-03-04 -> 2026-03-06
+KXHIGHCHI-26MAR05-B49.5                  no      63    54c     100c $   +28.98  2026-03-04 -> 2026-03-06
+KXHIGHLAX-26MAR04-B68.5                  yes    315     5c       0c $   -15.75  2026-03-04 -> 2026-03-05
+KXHIGHLAX-26MAR04-B64.5                  no      67    62c       0c $   -41.54  2026-03-04 -> 2026-03-05
+KXHIGHLAX-26MAR05-B70.5                  yes    560     1c       0c $    -5.60  2026-03-04 -> 2026-03-06
+KXHIGHLAX-26MAR05-B72.5                  yes    280     6c       0c $   -16.80  2026-03-04 -> 2026-03-06
+KXHIGHLAX-26MAR05-T75                    no      95    44c       0c $   -41.80  2026-03-04 -> 2026-03-06
+KXHIGHLAX-26MAR05-B74.5                  no      68    53c     100c $   +31.96  2026-03-04 -> 2026-03-06
+KXHIGHDEN-26MAR05-T64                    yes    721     1c       0c $    -7.21  2026-03-04 -> 2026-03-06
+KXHIGHDEN-26MAR05-B64.5                  yes    162     1c       0c $    -1.62  2026-03-04 -> 2026-03-06
+KXHIGHDEN-26MAR05-B68.5                  no      75    50c       0c $   -37.50  2026-03-04 -> 2026-03-06
+KXHIGHDEN-26MAR05-B70.5                  no      63    49c     100c $   +32.13  2026-03-04 -> 2026-03-06
+KXHIGHDEN-26MAR05-B66.5                  no      63    68c     100c $   +20.16  2026-03-04 -> 2026-03-06
+KXHIGHDEN-26MAR05-T71                    no      56    68c     100c $   +17.92  2026-03-04 -> 2026-03-06
+KXHIGHAUS-26MAR04-B88.5                  no      63    52c       0c $   -32.76  2026-03-04 -> 2026-03-05
+KXHIGHAUS-26MAR05-T83                    yes    420     1c       0c $    -4.20  2026-03-04 -> 2026-03-06
+KXHIGHAUS-26MAR05-B87.5                  no      72    50c       0c $   -36.00  2026-03-04 -> 2026-03-06
+KXHIGHAUS-26MAR05-B85.5                  no      70    42c     100c $   +40.60  2026-03-04 -> 2026-03-06
+KXHIGHAUS-26MAR05-B83.5                  no      63    43c     100c $   +35.91  2026-03-04 -> 2026-03-06
+KXHIGHNY-26MAR06-T41                     yes     89     8c       0c $    -7.12  2026-03-05 -> 2026-03-07
+KXHIGHCHI-26MAR05-B47.5                  yes    115    16c       0c $   -18.40  2026-03-05 -> 2026-03-06
+KXHIGHCHI-26MAR05-B45.5                  no      54    25c     100c $   +40.50  2026-03-05 -> 2026-03-06
+KXHIGHCHI-26MAR05-B51.5                  no      38    66c       0c $   -25.08  2026-03-05 -> 2026-03-06
+KXHIGHCHI-26MAR06-T69                    yes    115     5c       0c $    -5.75  2026-03-05 -> 2026-03-07
+KXHIGHCHI-26MAR06-B69.5                  no      48    48c     100c $   +24.96  2026-03-05 -> 2026-03-07
+KXHIGHCHI-26MAR06-B71.5                  no      48    50c     100c $   +24.00  2026-03-05 -> 2026-03-07
+KXHIGHLAX-26MAR06-B71.5                  yes    128    15c       0c $   -19.20  2026-03-05 -> 2026-03-07
+KXHIGHLAX-26MAR06-B75.5                  no      42    66c     100c $   +14.28  2026-03-05 -> 2026-03-07
+KXHIGHLAX-26MAR06-B73.5                  yes     29    14c     100c $   +24.94  2026-03-05 -> 2026-03-07
+KXHIGHDEN-26MAR06-T47                    yes    663     1c       0c $    -6.63  2026-03-05 -> 2026-03-07
+KXHIGHDEN-26MAR06-B42.5                  no      51    46c     100c $   +27.54  2026-03-05 -> 2026-03-07
+KXHIGHDEN-26MAR06-B40.5                  no      46    50c       0c $   -23.00  2026-03-05 -> 2026-03-07
+KXHIGHDEN-26MAR06-T40                    no      43    57c     100c $   +18.49  2026-03-05 -> 2026-03-07
+KXHIGHDEN-26MAR06-B44.5                  no      38    70c     100c $   +11.40  2026-03-05 -> 2026-03-07
+KXHIGHAUS-26MAR06-T81                    yes    384     1c       0c $    -3.84  2026-03-05 -> 2026-03-07
+KXHIGHAUS-26MAR06-B81.5                  yes    213     1c       0c $    -2.13  2026-03-05 -> 2026-03-07
+KXHIGHAUS-26MAR06-B85.5                  no      49    35c       0c $   -17.15  2026-03-05 -> 2026-03-07
+KXHIGHAUS-26MAR06-B87.5                  no      43    62c     100c $   +16.34  2026-03-05 -> 2026-03-07
+KXHIGHAUS-26MAR06-B83.5                  no      44    42c     100c $   +25.52  2026-03-05 -> 2026-03-07
+KXHIGHNY-26MAR06-B43.5                   no     129    45c     100c $   +70.95  2026-03-06 -> 2026-03-07
+KXHIGHNY-26MAR06-B41.5                   no     174    31c       0c $   -53.94  2026-03-06 -> 2026-03-07
+KXHIGHLAX-26MAR06-B73.5                  no     151    43c       0c $   -64.93  2026-03-06 -> 2026-03-07
 
 =========================================================================================================
-OPEN POSITIONS (44)
+OPEN POSITIONS (41)
 =========================================================================================================
 Ticker                                   Side   Qty  Entry       Cost      Opened
 ---------------------------------------------------------------------------------------------------------
-KXHIGHNY-26MAR03-T39                     yes     73     1c $     0.73  2026-03-02
-KXHIGHNY-26MAR03-B39.5                   no      23    51c $    11.73  2026-03-02
-KXHIGHNY-26MAR03-B41.5                   no      21    58c $    12.18  2026-03-02
-KXHIGHNY-26MAR03-B43.5                   no      17    68c $    11.56  2026-03-02
-KXHIGHCHI-26MAR03-T39                    yes    325     1c $     3.25  2026-03-02
-KXHIGHCHI-26MAR03-B39.5                  yes    135     1c $     1.35  2026-03-02
-KXHIGHCHI-26MAR03-B43.5                  no      23    50c $    11.50  2026-03-02
-KXHIGHCHI-26MAR03-B45.5                  no      19    68c $    12.92  2026-03-02
-KXHIGHCHI-26MAR03-B41.5                  no      22    52c $    11.44  2026-03-02
-KXHIGHLAX-26MAR03-B73.5                  yes    232     1c $     2.32  2026-03-02
-KXHIGHLAX-26MAR03-B71.5                  yes     70     4c $     2.80  2026-03-02
-KXHIGHLAX-26MAR03-B69.5                  no      24    48c $    11.52  2026-03-02
-KXHIGHLAX-26MAR03-B67.5                  no      21    53c $    11.13  2026-03-02
-KXHIGHLAX-26MAR03-T67                    no      18    74c $    13.32  2026-03-02
-KXHIGHDEN-26MAR03-T54                    yes    180     1c $     1.80  2026-03-02
-KXHIGHDEN-26MAR03-B49.5                  no      21    50c $    10.50  2026-03-02
-KXHIGHDEN-26MAR03-B51.5                  no      21    50c $    10.50  2026-03-02
-KXHIGHDEN-26MAR03-B47.5                  no      20    55c $    11.00  2026-03-02
-KXHIGHDEN-26MAR03-T47                    no      18    72c $    12.96  2026-03-02
-KXHIGHAUS-26MAR03-T85                    yes    147     1c $     1.47  2026-03-02
-KXHIGHAUS-26MAR03-B89.5                  no      23    46c $    10.58  2026-03-02
-KXHIGHAUS-26MAR03-B85.5                  yes     45     2c $     0.90  2026-03-02
-KXHIGHAUS-26MAR03-B87.5                  no      23    44c $    10.12  2026-03-02
-KXHIGHNY-26MAR04-T48                     yes    367     1c $     3.67  2026-03-03
-KXHIGHNY-26MAR04-B48.5                   yes    157     6c $     9.42  2026-03-03
-KXHIGHNY-26MAR04-B50.5                   no      64    56c $    35.84  2026-03-03
-KXHIGHNY-26MAR04-B52.5                   no      54    70c $    37.80  2026-03-03
-KXHIGHCHI-26MAR03-B41.5                  yes     61    15c $     9.15  2026-03-03
-KXHIGHCHI-26MAR04-B40.5                  yes    881     1c $     8.81  2026-03-03
-KXHIGHCHI-26MAR04-B42.5                  yes    400     1c $     4.00  2026-03-03
-KXHIGHCHI-26MAR04-T47                    no      71    49c $    34.79  2026-03-03
-KXHIGHCHI-26MAR04-B46.5                  no      60    56c $    33.60  2026-03-03
-KXHIGHLAX-26MAR03-B69.5                  yes     93    10c $     9.30  2026-03-03
-KXHIGHLAX-26MAR04-T71                    yes    339     1c $     3.39  2026-03-03
-KXHIGHLAX-26MAR04-B70.5                  yes    169    13c $    21.97  2026-03-03
-KXHIGHLAX-26MAR04-B66.5                  no      58    57c $    33.06  2026-03-03
-KXHIGHLAX-26MAR04-B68.5                  no      62    51c $    31.62  2026-03-03
-KXHIGHDEN-26MAR03-B53.5                  no      48    63c $    30.24  2026-03-03
-KXHIGHDEN-26MAR04-T63                    yes     89    32c $    28.48  2026-03-03
-KXHIGHDEN-26MAR04-B63.5                  no      58    62c $    35.96  2026-03-03
-KXHIGHDEN-26MAR04-B65.5                  no      55    66c $    36.30  2026-03-03
-KXHIGHAUS-26MAR04-T82                    yes    339     1c $     3.39  2026-03-03
-KXHIGHAUS-26MAR04-B84.5                  no      66    47c $    31.02  2026-03-03
-KXHIGHAUS-26MAR04-B86.5                  no      55    53c $    29.15  2026-03-03
+KXHIGHNY-26MAR07-T50                     yes    205    14c $    28.70  2026-03-06
+KXHIGHNY-26MAR07-B52.5                   no     102    50c $    51.00  2026-03-06
+KXHIGHNY-26MAR07-B50.5                   no     106    58c $    61.48  2026-03-06
+KXHIGHNY-26MAR07-B54.5                   no      89    68c $    60.52  2026-03-06
+KXHIGHCHI-26MAR07-B62.5                  yes    571     1c $     5.71  2026-03-06
+KXHIGHCHI-26MAR07-B66.5                  no     112    56c $    62.72  2026-03-06
+KXHIGHCHI-26MAR07-B68.5                  no      95    68c $    64.60  2026-03-06
+KXHIGHLAX-26MAR07-T78                    yes    242    10c $    24.20  2026-03-06
+KXHIGHLAX-26MAR07-B80.5                  no     108    61c $    65.88  2026-03-06
+KXHIGHLAX-26MAR07-B78.5                  no     105    63c $    66.15  2026-03-06
+KXHIGHLAX-26MAR07-B82.5                  no      89    77c $    68.53  2026-03-06
+KXHIGHDEN-26MAR07-T48                    yes    242    19c $    45.98  2026-03-06
+KXHIGHDEN-26MAR07-B50.5                  no     106    61c $    64.66  2026-03-06
+KXHIGHDEN-26MAR07-B52.5                  no      94    69c $    64.86  2026-03-06
+KXHIGHAUS-26MAR07-T78                    yes    727     1c $     7.27  2026-03-06
+KXHIGHAUS-26MAR07-B78.5                  yes    541     1c $     5.41  2026-03-06
+KXHIGHAUS-26MAR07-B82.5                  no     111    57c $    63.27  2026-03-06
+KXHIGHAUS-26MAR07-B84.5                  no      95    62c $    58.90  2026-03-06
+KXHIGHAUS-26MAR07-T85                    no      90    61c $    54.90  2026-03-06
+KXHIGHAUS-26MAR07-B80.5                  yes     56     3c $     1.68  2026-03-06
+KXHIGHNY-26MAR08-T62                     yes    239     8c $    19.12  2026-03-07
+KXHIGHNY-26MAR08-B64.5                   no      76    60c $    45.60  2026-03-07
+KXHIGHNY-26MAR08-B66.5                   no      66    60c $    39.60  2026-03-07
+KXHIGHCHI-26MAR08-T59                    yes    479     1c $     4.79  2026-03-07
+KXHIGHCHI-26MAR08-B59.5                  yes    232     3c $     6.96  2026-03-07
+KXHIGHCHI-26MAR08-B61.5                  no      81    54c $    43.74  2026-03-07
+KXHIGHCHI-26MAR08-B63.5                  no      76    58c $    44.08  2026-03-07
+KXHIGHCHI-26MAR08-B65.5                  no      64    72c $    46.08  2026-03-07
+KXHIGHLAX-26MAR08-B88.5                  no      79    51c $    40.29  2026-03-07
+KXHIGHLAX-26MAR08-B86.5                  no      77    51c $    39.27  2026-03-07
+KXHIGHLAX-26MAR08-B90.5                  no      68    59c $    40.12  2026-03-07
+KXHIGHLAX-26MAR08-B84.5                  no      68    66c $    44.88  2026-03-07
+KXHIGHDEN-26MAR07-B48.5                  no      75    58c $    43.50  2026-03-07
+KXHIGHDEN-26MAR08-B60.5                  yes    410     1c $     4.10  2026-03-07
+KXHIGHDEN-26MAR08-B58.5                  yes    499     1c $     4.99  2026-03-07
+KXHIGHDEN-26MAR08-T65                    no      81    49c $    39.69  2026-03-07
+KXHIGHDEN-26MAR08-B64.5                  no      77    54c $    41.58  2026-03-07
+KXHIGHDEN-26MAR08-B62.5                  yes     70     9c $     6.30  2026-03-07
+KXHIGHAUS-26MAR08-T76                    yes    552     1c $     5.52  2026-03-07
+KXHIGHAUS-26MAR08-B75.5                  yes    491     1c $     4.91  2026-03-07
+KXHIGHAUS-26MAR08-T69                    no      68    69c $    46.92  2026-03-07

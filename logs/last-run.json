@@ -1,10 +1,10 @@
 {
   "command": "auto-settle",
-  "timestamp": "2026-03-03T20:30:06.069661",
+  "timestamp": "2026-03-07T20:30:05.917758",
   "mode": "paper",
-  "balance_cents": 100974,
-  "settled": 28,
-  "total_positions": 72,
-  "open_positions": 44,
-  "total_pnl_cents": 66828
+  "balance_cents": 105343,
+  "settled": 20,
+  "total_positions": 61,
+  "open_positions": 41,
+  "total_pnl_cents": 159189
 }
