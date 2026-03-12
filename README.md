@@ -2,7 +2,7 @@
 
 **Paper Trading Results: +$4,782 (+478% ROI) in 11 days** — 254 trades, 49.6% win rate, 3.23:1 payoff ratio. See [TRADE_LOG.md](TRADE_LOG.md) for the full verified history.
 
-![Preview](preview.png)
+![Preview](preview2.png)
 
 Automated trading CLI for [Kalshi](https://kalshi.com) temperature prediction markets. Uses GFS 31-member ensemble forecasts with MOS-style bias correction to detect pricing edges, then sizes positions with quarter-Kelly and verifies order book liquidity before execution.
 
