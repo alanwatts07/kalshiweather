@@ -1,0 +1,298 @@
+# Verified Trade Log
+
+Paper trading results from the kalshiweather ensemble forecasting system. All trades executed automatically via `auto` command with quarter-Kelly sizing and real order book liquidity verification.
+
+## Summary
+
+| Metric | Value |
+|--------|-------|
+| Starting Balance | $1,000.00 |
+| Current Equity | $5,782.31 |
+| Realized P&L | +$4,782.31 (+478%) |
+| Trading Period | Feb 28 – Mar 12, 2026 (11 days) |
+| Total Trades | 254 |
+| Win Rate | 49.6% (126W / 128L) |
+| Avg Win | $55.34 |
+| Avg Loss | $17.11 |
+| Win/Loss Ratio | 3.23:1 |
+| Open Positions | 48 |
+| Cash Available | $3,602.11 |
+| In Trades | $2,180.20 |
+
+## Key Wins
+
+| Date | Ticker | P&L | Notes |
+|------|--------|-----|-------|
+| Mar 9 | KXHIGHDEN-26MAR10-T67 YES | +$936.54 | Denver high temp nailed at 1¢ entry |
+| Mar 6 | KXHIGHAUS-26MAR07-T78 YES | +$719.73 | Austin threshold call at 1¢ |
+| Mar 9 | KXHIGHLAX-26MAR10-B67.5 YES | +$473.20 | LA bracket at 9¢ entry |
+| Mar 3 | KXHIGHCHI-26MAR04-B42.5 YES | +$396.00 | Chicago bracket at 1¢ |
+| Mar 10 | KXHIGHAUS-26MAR10-B84.5 YES | +$334.64 | Austin bracket at 6¢ |
+| Mar 8 | KXHIGHDEN-26MAR08-B64.5 YES | +$108.58 | Denver bracket at 11¢ |
+
+## Strategy Edge
+
+The system's edge comes from asymmetric payoffs: losses are small (avg $17) because the system buys cheap longshots and sells overpriced brackets, while wins are large (avg $55) when the ensemble forecast proves correct. A 49.6% win rate with a 3.23:1 payoff ratio produces consistent alpha.
+
+## Full Trade History
+
+```
+Date         Ticker                         Side    Qty    In   Out      P&L
+--------------------------------------------------------------------------
+2026-02-28   KXHIGHNY-26MAR01-B42.5         yes     190    7¢  100¢ $+176.70
+2026-02-28   KXHIGHNY-26MAR01-B40.5         yes     146   24¢    0¢ $ -35.04
+2026-02-28   KXHIGHNY-26MAR01-B38.5         no       73   49¢  100¢ $ +37.23
+2026-02-28   KXHIGHCHI-26MAR01-T29          yes     500    1¢    0¢ $  -5.00
+2026-02-28   KXHIGHCHI-26MAR01-B29.5        yes     143    1¢    0¢ $  -1.43
+2026-02-28   KXHIGHCHI-26MAR01-B31.5        no       70   56¢    0¢ $ -39.20
+2026-02-28   KXHIGHCHI-26MAR01-B33.5        no       68   56¢  100¢ $ +29.92
+2026-02-28   KXHIGHCHI-26MAR01-B35.5        no       54   75¢  100¢ $ +13.50
+2026-02-28   KXHIGHLAX-26FEB28-B79.5        no      714    1¢    0¢ $  -7.14
+2026-02-28   KXHIGHLAX-26FEB28-T80          yes     416    1¢    0¢ $  -4.16
+2026-02-28   KXHIGHLAX-26MAR01-T78          yes     555    1¢    0¢ $  -5.55
+2026-02-28   KXHIGHLAX-26MAR01-B73.5        no       70   53¢  100¢ $ +32.90
+2026-02-28   KXHIGHLAX-26MAR01-B71.5        no       63   62¢  100¢ $ +23.94
+2026-02-28   KXHIGHLAX-26MAR01-B75.5        no       60   64¢  100¢ $ +21.60
+2026-02-28   KXHIGHDEN-26FEB28-B66.5        no      185   17¢    0¢ $ -31.45
+2026-02-28   KXHIGHDEN-26FEB28-B68.5        no       62   47¢  100¢ $ +32.86
+2026-02-28   KXHIGHDEN-26MAR01-T61          yes     500    1¢    0¢ $  -5.00
+2026-02-28   KXHIGHDEN-26MAR01-B61.5        yes     250    7¢    0¢ $ -17.50
+2026-02-28   KXHIGHDEN-26MAR01-B65.5        no       65   55¢  100¢ $ +29.25
+2026-02-28   KXHIGHDEN-26MAR01-B63.5        no       69   57¢    0¢ $ -39.33
+2026-02-28   KXHIGHAUS-26FEB28-B88.5        no      116    3¢  100¢ $+112.52
+2026-02-28   KXHIGHAUS-26FEB28-B86.5        no       78    8¢    0¢ $  -6.24
+2026-02-28   KXHIGHAUS-26MAR01-T81          yes     714    1¢    0¢ $  -7.14
+2026-02-28   KXHIGHAUS-26MAR01-B81.5        yes     121    7¢    0¢ $  -8.47
+2026-02-28   KXHIGHAUS-26MAR01-B83.5        no       80   35¢  100¢ $ +52.00
+2026-02-28   KXHIGHAUS-26MAR01-B85.5        no       64   49¢    0¢ $ -31.36
+2026-03-01   KXHIGHNY-26MAR01-B42.5         no      149    1¢    0¢ $  -1.49
+2026-03-01   KXHIGHNY-26MAR01-B44.5         no       24   74¢  100¢ $  +6.24
+2026-03-01   KXHIGHNY-26MAR02-B30.5         yes      76    3¢    0¢ $  -2.28
+2026-03-01   KXHIGHNY-26MAR02-B32.5         yes      22   13¢  100¢ $ +19.14
+2026-03-01   KXHIGHNY-26MAR02-T35           no       23   70¢  100¢ $  +6.90
+2026-03-01   KXHIGHNY-26MAR02-B34.5         no       26   66¢  100¢ $  +8.84
+2026-03-01   KXHIGHCHI-26MAR02-T40          yes     231    1¢    0¢ $  -2.31
+2026-03-01   KXHIGHCHI-26MAR02-B40.5        yes     189    1¢  100¢ $+187.11
+2026-03-01   KXHIGHCHI-26MAR02-B44.5        no       27   62¢  100¢ $ +10.26
+2026-03-01   KXHIGHCHI-26MAR02-B46.5        no       26   61¢  100¢ $ +10.14
+2026-03-01   KXHIGHCHI-26MAR02-T47          no       25   67¢  100¢ $  +8.25
+2026-03-01   KXHIGHCHI-26MAR02-B42.5        no       25   57¢  100¢ $ +10.75
+2026-03-01   KXHIGHLAX-26MAR01-B77.5        yes      29    3¢  100¢ $ +28.13
+2026-03-01   KXHIGHLAX-26MAR02-B68.5        no       32   49¢  100¢ $ +16.32
+2026-03-01   KXHIGHLAX-26MAR02-B66.5        no       26   50¢  100¢ $ +13.00
+2026-03-01   KXHIGHLAX-26MAR02-B70.5        no       26   59¢  100¢ $ +10.66
+2026-03-01   KXHIGHLAX-26MAR02-B72.5        no       22   73¢  100¢ $  +5.94
+2026-03-01   KXHIGHDEN-26MAR02-T68          yes     208    1¢    0¢ $  -2.08
+2026-03-01   KXHIGHDEN-26MAR02-B70.5        no       30   49¢    0¢ $ -14.70
+2026-03-01   KXHIGHDEN-26MAR02-B72.5        no       29   41¢  100¢ $ +17.11
+2026-03-01   KXHIGHDEN-26MAR02-B74.5        no       23   60¢  100¢ $  +9.20
+2026-03-01   KXHIGHAUS-26MAR02-T80          yes     173    1¢    0¢ $  -1.73
+2026-03-01   KXHIGHAUS-26MAR02-B84.5        no       31   48¢  100¢ $ +16.12
+2026-03-01   KXHIGHAUS-26MAR02-B80.5        yes      35    1¢    0¢ $  -0.35
+2026-03-01   KXHIGHAUS-26MAR02-B82.5        no       28   42¢  100¢ $ +16.24
+2026-03-01   KXHIGHAUS-26MAR02-B86.5        no       22   56¢    0¢ $ -12.32
+2026-03-02   KXHIGHNY-26MAR02-B34.5         yes      95    3¢    0¢ $  -2.85
+2026-03-02   KXHIGHNY-26MAR02-B32.5         no       38   30¢    0¢ $ -11.40
+2026-03-02   KXHIGHNY-26MAR02-B30.5         no       19   68¢  100¢ $  +6.08
+2026-03-02   KXHIGHNY-26MAR03-T39           yes      73    1¢  100¢ $ +72.27
+2026-03-02   KXHIGHNY-26MAR03-B39.5         no       23   51¢  100¢ $ +11.27
+2026-03-02   KXHIGHNY-26MAR03-B41.5         no       21   58¢  100¢ $  +8.82
+2026-03-02   KXHIGHNY-26MAR03-B43.5         no       17   68¢  100¢ $  +5.44
+2026-03-02   KXHIGHCHI-26MAR03-T39          yes     325    1¢    0¢ $  -3.25
+2026-03-02   KXHIGHCHI-26MAR03-B39.5        yes     135    1¢    0¢ $  -1.35
+2026-03-02   KXHIGHCHI-26MAR03-B43.5        no       23   50¢    0¢ $ -11.50
+2026-03-02   KXHIGHCHI-26MAR03-B45.5        no       19   68¢  100¢ $  +6.08
+2026-03-02   KXHIGHCHI-26MAR03-B41.5        no       22   52¢  100¢ $ +10.56
+2026-03-02   KXHIGHLAX-26MAR02-T73          yes     325    1¢    0¢ $  -3.25
+2026-03-02   KXHIGHLAX-26MAR02-B72.5        yes     180    1¢    0¢ $  -1.80
+2026-03-02   KXHIGHLAX-26MAR03-B73.5        yes     232    1¢    0¢ $  -2.32
+2026-03-02   KXHIGHLAX-26MAR03-B71.5        yes      70    4¢    0¢ $  -2.80
+2026-03-02   KXHIGHLAX-26MAR03-B69.5        no       24   48¢  100¢ $ +12.48
+2026-03-02   KXHIGHLAX-26MAR03-B67.5        no       21   53¢    0¢ $ -11.13
+2026-03-02   KXHIGHLAX-26MAR03-T67          no       18   74¢  100¢ $  +4.68
+2026-03-02   KXHIGHDEN-26MAR03-T54          yes     180    1¢    0¢ $  -1.80
+2026-03-02   KXHIGHDEN-26MAR03-B49.5        no       21   50¢    0¢ $ -10.50
+2026-03-02   KXHIGHDEN-26MAR03-B51.5        no       21   50¢  100¢ $ +10.50
+2026-03-02   KXHIGHDEN-26MAR03-B47.5        no       20   55¢  100¢ $  +9.00
+2026-03-02   KXHIGHDEN-26MAR03-T47          no       18   72¢  100¢ $  +5.04
+2026-03-02   KXHIGHAUS-26MAR03-T85          yes     147    1¢    0¢ $  -1.47
+2026-03-02   KXHIGHAUS-26MAR03-B89.5        no       23   46¢    0¢ $ -10.58
+2026-03-02   KXHIGHAUS-26MAR03-B85.5        yes      45    2¢    0¢ $  -0.90
+2026-03-02   KXHIGHAUS-26MAR03-B87.5        no       23   44¢  100¢ $ +12.88
+2026-03-03   KXHIGHNY-26MAR04-T48           yes     367    1¢    0¢ $  -3.67
+2026-03-03   KXHIGHNY-26MAR04-B48.5         yes     157    6¢  100¢ $+147.58
+2026-03-03   KXHIGHNY-26MAR04-B50.5         no       64   56¢  100¢ $ +28.16
+2026-03-03   KXHIGHNY-26MAR04-B52.5         no       54   70¢  100¢ $ +16.20
+2026-03-03   KXHIGHCHI-26MAR03-B41.5        yes      61   15¢    0¢ $  -9.15
+2026-03-03   KXHIGHCHI-26MAR04-B40.5        yes     881    1¢    0¢ $  -8.81
+2026-03-03   KXHIGHCHI-26MAR04-B42.5        yes     400    1¢  100¢ $+396.00
+2026-03-03   KXHIGHCHI-26MAR04-T47          no       71   49¢  100¢ $ +36.21
+2026-03-03   KXHIGHCHI-26MAR04-B46.5        no       60   56¢  100¢ $ +26.40
+2026-03-03   KXHIGHLAX-26MAR03-B69.5        yes      93   10¢    0¢ $  -9.30
+2026-03-03   KXHIGHLAX-26MAR04-T71          yes     339    1¢    0¢ $  -3.39
+2026-03-03   KXHIGHLAX-26MAR04-B70.5        yes     169   13¢    0¢ $ -21.97
+2026-03-03   KXHIGHLAX-26MAR04-B66.5        no       58   57¢  100¢ $ +24.94
+2026-03-03   KXHIGHLAX-26MAR04-B68.5        no       62   51¢  100¢ $ +30.38
+2026-03-03   KXHIGHDEN-26MAR03-B53.5        no       48   63¢  100¢ $ +17.76
+2026-03-03   KXHIGHDEN-26MAR04-T63          yes      89   32¢  100¢ $ +60.52
+2026-03-03   KXHIGHDEN-26MAR04-B63.5        no       58   62¢  100¢ $ +22.04
+2026-03-03   KXHIGHDEN-26MAR04-B65.5        no       55   66¢  100¢ $ +18.70
+2026-03-03   KXHIGHAUS-26MAR04-T82          yes     339    1¢    0¢ $  -3.39
+2026-03-03   KXHIGHAUS-26MAR04-B84.5        no       66   47¢  100¢ $ +34.98
+2026-03-03   KXHIGHAUS-26MAR04-B86.5        no       55   53¢  100¢ $ +25.85
+2026-03-04   KXHIGHNY-26MAR04-B48.5         no      126   25¢    0¢ $ -31.50
+2026-03-04   KXHIGHNY-26MAR05-T41           yes     360    2¢    0¢ $  -7.20
+2026-03-04   KXHIGHNY-26MAR05-B43.5         no       78   46¢  100¢ $ +42.12
+2026-03-04   KXHIGHNY-26MAR05-B41.5         no       75   40¢  100¢ $ +45.00
+2026-03-04   KXHIGHNY-26MAR05-B45.5         no       55   76¢    0¢ $ -41.80
+2026-03-04   KXHIGHCHI-26MAR04-B44.5        yes     157   16¢    0¢ $ -25.12
+2026-03-04   KXHIGHCHI-26MAR05-T45          yes     230    5¢    0¢ $ -11.50
+2026-03-04   KXHIGHCHI-26MAR05-B45.5        yes      62    4¢    0¢ $  -2.48
+2026-03-04   KXHIGHCHI-26MAR05-B49.5        no       63   54¢  100¢ $ +28.98
+2026-03-04   KXHIGHLAX-26MAR04-B68.5        yes     315    5¢    0¢ $ -15.75
+2026-03-04   KXHIGHLAX-26MAR04-B64.5        no       67   62¢    0¢ $ -41.54
+2026-03-04   KXHIGHLAX-26MAR05-B70.5        yes     560    1¢    0¢ $  -5.60
+2026-03-04   KXHIGHLAX-26MAR05-B72.5        yes     280    6¢    0¢ $ -16.80
+2026-03-04   KXHIGHLAX-26MAR05-T75          no       95   44¢    0¢ $ -41.80
+2026-03-04   KXHIGHLAX-26MAR05-B74.5        no       68   53¢  100¢ $ +31.96
+2026-03-04   KXHIGHDEN-26MAR05-T64          yes     721    1¢    0¢ $  -7.21
+2026-03-04   KXHIGHDEN-26MAR05-B64.5        yes     162    1¢    0¢ $  -1.62
+2026-03-04   KXHIGHDEN-26MAR05-B68.5        no       75   50¢    0¢ $ -37.50
+2026-03-04   KXHIGHDEN-26MAR05-B70.5        no       63   49¢  100¢ $ +32.13
+2026-03-04   KXHIGHDEN-26MAR05-B66.5        no       63   68¢  100¢ $ +20.16
+2026-03-04   KXHIGHDEN-26MAR05-T71          no       56   68¢  100¢ $ +17.92
+2026-03-04   KXHIGHAUS-26MAR04-B88.5        no       63   52¢    0¢ $ -32.76
+2026-03-04   KXHIGHAUS-26MAR05-T83          yes     420    1¢    0¢ $  -4.20
+2026-03-04   KXHIGHAUS-26MAR05-B87.5        no       72   50¢    0¢ $ -36.00
+2026-03-04   KXHIGHAUS-26MAR05-B85.5        no       70   42¢  100¢ $ +40.60
+2026-03-04   KXHIGHAUS-26MAR05-B83.5        no       63   43¢  100¢ $ +35.91
+2026-03-05   KXHIGHNY-26MAR06-T41           yes      89    8¢    0¢ $  -7.12
+2026-03-05   KXHIGHCHI-26MAR05-B47.5        yes     115   16¢    0¢ $ -18.40
+2026-03-05   KXHIGHCHI-26MAR05-B45.5        no       54   25¢  100¢ $ +40.50
+2026-03-05   KXHIGHCHI-26MAR05-B51.5        no       38   66¢    0¢ $ -25.08
+2026-03-05   KXHIGHCHI-26MAR06-T69          yes     115    5¢    0¢ $  -5.75
+2026-03-05   KXHIGHCHI-26MAR06-B69.5        no       48   48¢  100¢ $ +24.96
+2026-03-05   KXHIGHCHI-26MAR06-B71.5        no       48   50¢  100¢ $ +24.00
+2026-03-05   KXHIGHLAX-26MAR06-B71.5        yes     128   15¢    0¢ $ -19.20
+2026-03-05   KXHIGHLAX-26MAR06-B75.5        no       42   66¢  100¢ $ +14.28
+2026-03-05   KXHIGHLAX-26MAR06-B73.5        yes      29   14¢  100¢ $ +24.94
+2026-03-05   KXHIGHDEN-26MAR06-T47          yes     663    1¢    0¢ $  -6.63
+2026-03-05   KXHIGHDEN-26MAR06-B42.5        no       51   46¢  100¢ $ +27.54
+2026-03-05   KXHIGHDEN-26MAR06-B40.5        no       46   50¢    0¢ $ -23.00
+2026-03-05   KXHIGHDEN-26MAR06-T40          no       43   57¢  100¢ $ +18.49
+2026-03-05   KXHIGHDEN-26MAR06-B44.5        no       38   70¢  100¢ $ +11.40
+2026-03-05   KXHIGHAUS-26MAR06-T81          yes     384    1¢    0¢ $  -3.84
+2026-03-05   KXHIGHAUS-26MAR06-B81.5        yes     213    1¢    0¢ $  -2.13
+2026-03-05   KXHIGHAUS-26MAR06-B85.5        no       49   35¢    0¢ $ -17.15
+2026-03-05   KXHIGHAUS-26MAR06-B87.5        no       43   62¢  100¢ $ +16.34
+2026-03-05   KXHIGHAUS-26MAR06-B83.5        no       44   42¢  100¢ $ +25.52
+2026-03-06   KXHIGHNY-26MAR06-B43.5         no      129   45¢  100¢ $ +70.95
+2026-03-06   KXHIGHNY-26MAR06-B41.5         no      174   31¢    0¢ $ -53.94
+2026-03-06   KXHIGHNY-26MAR07-T50           yes     205   14¢    0¢ $ -28.70
+2026-03-06   KXHIGHNY-26MAR07-B52.5         no      102   50¢    0¢ $ -51.00
+2026-03-06   KXHIGHNY-26MAR07-B50.5         no      106   58¢  100¢ $ +44.52
+2026-03-06   KXHIGHNY-26MAR07-B54.5         no       89   68¢  100¢ $ +28.48
+2026-03-06   KXHIGHCHI-26MAR07-B62.5        yes     571    1¢    0¢ $  -5.71
+2026-03-06   KXHIGHCHI-26MAR07-B66.5        no      112   56¢  100¢ $ +49.28
+2026-03-06   KXHIGHCHI-26MAR07-B68.5        no       95   68¢  100¢ $ +30.40
+2026-03-06   KXHIGHLAX-26MAR06-B73.5        no      151   43¢    0¢ $ -64.93
+2026-03-06   KXHIGHLAX-26MAR07-T78          yes     242   10¢    0¢ $ -24.20
+2026-03-06   KXHIGHLAX-26MAR07-B80.5        no      108   61¢  100¢ $ +42.12
+2026-03-06   KXHIGHLAX-26MAR07-B78.5        no      105   63¢    0¢ $ -66.15
+2026-03-06   KXHIGHLAX-26MAR07-B82.5        no       89   77¢  100¢ $ +20.47
+2026-03-06   KXHIGHDEN-26MAR07-T48          yes     242   19¢    0¢ $ -45.98
+2026-03-06   KXHIGHDEN-26MAR07-B50.5        no      106   61¢  100¢ $ +41.34
+2026-03-06   KXHIGHDEN-26MAR07-B52.5        no       94   69¢  100¢ $ +29.14
+2026-03-06   KXHIGHAUS-26MAR07-T78          yes     727    1¢  100¢ $+719.73
+2026-03-06   KXHIGHAUS-26MAR07-B78.5        yes     541    1¢    0¢ $  -5.41
+2026-03-06   KXHIGHAUS-26MAR07-B82.5        no      111   57¢  100¢ $ +47.73
+2026-03-06   KXHIGHAUS-26MAR07-B84.5        no       95   62¢  100¢ $ +36.10
+2026-03-06   KXHIGHAUS-26MAR07-T85          no       90   61¢  100¢ $ +35.10
+2026-03-06   KXHIGHAUS-26MAR07-B80.5        yes      56    3¢    0¢ $  -1.68
+2026-03-07   KXHIGHNY-26MAR08-T62           yes     239    8¢    0¢ $ -19.12
+2026-03-07   KXHIGHNY-26MAR08-B64.5         no       76   60¢  100¢ $ +30.40
+2026-03-07   KXHIGHNY-26MAR08-B66.5         no       66   60¢  100¢ $ +26.40
+2026-03-07   KXHIGHCHI-26MAR08-T59          yes     479    1¢    0¢ $  -4.79
+2026-03-07   KXHIGHCHI-26MAR08-B59.5        yes     232    3¢    0¢ $  -6.96
+2026-03-07   KXHIGHCHI-26MAR08-B61.5        no       81   54¢  100¢ $ +37.26
+2026-03-07   KXHIGHCHI-26MAR08-B63.5        no       76   58¢    0¢ $ -44.08
+2026-03-07   KXHIGHCHI-26MAR08-B65.5        no       64   72¢  100¢ $ +17.92
+2026-03-07   KXHIGHLAX-26MAR08-B88.5        no       79   51¢    0¢ $ -40.29
+2026-03-07   KXHIGHLAX-26MAR08-B86.5        no       77   51¢  100¢ $ +37.73
+2026-03-07   KXHIGHLAX-26MAR08-B90.5        no       68   59¢  100¢ $ +27.88
+2026-03-07   KXHIGHLAX-26MAR08-B84.5        no       68   66¢  100¢ $ +23.12
+2026-03-07   KXHIGHDEN-26MAR07-B48.5        no       75   58¢    0¢ $ -43.50
+2026-03-07   KXHIGHDEN-26MAR08-B60.5        yes     410    1¢    0¢ $  -4.10
+2026-03-07   KXHIGHDEN-26MAR08-B58.5        yes     499    1¢    0¢ $  -4.99
+2026-03-07   KXHIGHDEN-26MAR08-T65          no       81   49¢  100¢ $ +41.31
+2026-03-07   KXHIGHDEN-26MAR08-B64.5        no       77   54¢    0¢ $ -41.58
+2026-03-07   KXHIGHDEN-26MAR08-B62.5        yes      70    9¢    0¢ $  -6.30
+2026-03-07   KXHIGHAUS-26MAR08-T76          yes     552    1¢    0¢ $  -5.52
+2026-03-07   KXHIGHAUS-26MAR08-B75.5        yes     491    1¢    0¢ $  -4.91
+2026-03-07   KXHIGHAUS-26MAR08-T69          no       68   69¢    0¢ $ -46.92
+2026-03-08   KXHIGHNY-26MAR08-B62.5         yes     478    1¢    0¢ $  -4.78
+2026-03-08   KXHIGHNY-26MAR08-B68.5         no       60   75¢    0¢ $ -45.00
+2026-03-08   KXHIGHNY-26MAR09-T63           yes     658    1¢    0¢ $  -6.58
+2026-03-08   KXHIGHNY-26MAR09-B63.5         yes     658    1¢    0¢ $  -6.58
+2026-03-08   KXHIGHNY-26MAR09-B67.5         no       75   47¢  100¢ $ +39.75
+2026-03-08   KXHIGHNY-26MAR09-B69.5         no       69   60¢  100¢ $ +27.60
+2026-03-08   KXHIGHNY-26MAR09-T70           no       59   59¢    0¢ $ -34.81
+2026-03-08   KXHIGHNY-26MAR09-B65.5         no       63   67¢  100¢ $ +20.79
+2026-03-08   KXHIGHCHI-26MAR08-B59.5        no       70   64¢  100¢ $ +25.20
+2026-03-08   KXHIGHCHI-26MAR09-T68          yes     292    1¢    0¢ $  -2.92
+2026-03-08   KXHIGHCHI-26MAR09-B70.5        no       67   59¢  100¢ $ +27.47
+2026-03-08   KXHIGHCHI-26MAR09-B72.5        no       66   57¢    0¢ $ -37.62
+2026-03-08   KXHIGHCHI-26MAR09-B68.5        no       62   71¢  100¢ $ +17.98
+2026-03-08   KXHIGHCHI-26MAR09-B74.5        no       59   66¢  100¢ $ +20.06
+2026-03-08   KXHIGHLAX-26MAR09-T74          yes     585    1¢    0¢ $  -5.85
+2026-03-08   KXHIGHLAX-26MAR09-B69.5        no       84   48¢    0¢ $ -40.32
+2026-03-08   KXHIGHLAX-26MAR09-B67.5        no       69   55¢  100¢ $ +31.05
+2026-03-08   KXHIGHLAX-26MAR09-B71.5        no       62   60¢  100¢ $ +24.80
+2026-03-08   KXHIGHLAX-26MAR09-T67          no       57   76¢  100¢ $ +13.68
+2026-03-08   KXHIGHDEN-26MAR08-B64.5        yes     122   11¢  100¢ $+108.58
+2026-03-08   KXHIGHDEN-26MAR09-B67.5        yes     658    1¢    0¢ $  -6.58
+2026-03-08   KXHIGHDEN-26MAR09-T67          yes     526    1¢    0¢ $  -5.26
+2026-03-08   KXHIGHDEN-26MAR09-B71.5        no       78   55¢  100¢ $ +35.10
+2026-03-08   KXHIGHDEN-26MAR09-B73.5        no       64   58¢    0¢ $ -37.12
+2026-03-08   KXHIGHDEN-26MAR09-T74          no       59   58¢  100¢ $ +24.78
+2026-03-08   KXHIGHDEN-26MAR09-B69.5        no       70   63¢  100¢ $ +25.90
+2026-03-08   KXHIGHAUS-26MAR08-B71.5        yes     358    1¢    0¢ $  -3.58
+2026-03-08   KXHIGHAUS-26MAR09-B81.5        yes     146   11¢    0¢ $ -16.06
+2026-03-08   KXHIGHAUS-26MAR09-B79.5        yes     121    1¢  100¢ $+119.79
+2026-03-09   KXHIGHNY-26MAR10-B66.5         yes    1194    2¢    0¢ $ -23.88
+2026-03-09   KXHIGHNY-26MAR10-B68.5         yes     800    1¢    0¢ $  -8.00
+2026-03-09   KXHIGHNY-26MAR10-B72.5         no      144   59¢  100¢ $ +59.04
+2026-03-09   KXHIGHNY-26MAR10-T73           no      128   63¢    0¢ $ -80.64
+2026-03-09   KXHIGHNY-26MAR10-B70.5         no      144   56¢  100¢ $ +63.36
+2026-03-09   KXHIGHCHI-26MAR09-T75          no      115   76¢  100¢ $ +27.60
+2026-03-09   KXHIGHCHI-26MAR10-B59.5        yes     867    1¢    0¢ $  -8.67
+2026-03-09   KXHIGHCHI-26MAR10-B61.5        yes     547    4¢    0¢ $ -21.88
+2026-03-09   KXHIGHCHI-26MAR10-B57.5        yes     235    1¢    0¢ $  -2.35
+2026-03-09   KXHIGHCHI-26MAR10-T64          no      148   55¢  100¢ $ +66.60
+2026-03-09   KXHIGHCHI-26MAR10-B63.5        no      136   61¢    0¢ $ -82.96
+2026-03-09   KXHIGHLAX-26MAR10-B67.5        yes     520    9¢  100¢ $+473.20
+2026-03-09   KXHIGHLAX-26MAR10-B69.5        yes     282    1¢    0¢ $  -2.82
+2026-03-09   KXHIGHLAX-26MAR10-T65          no      160   51¢  100¢ $ +78.40
+2026-03-09   KXHIGHLAX-26MAR10-B65.5        yes      69   18¢    0¢ $ -12.42
+2026-03-09   KXHIGHDEN-26MAR09-B69.5        yes     252    1¢    0¢ $  -2.52
+2026-03-09   KXHIGHDEN-26MAR10-T67          yes     946    1¢  100¢ $+936.54
+2026-03-09   KXHIGHDEN-26MAR10-B67.5        yes     324    1¢    0¢ $  -3.24
+2026-03-09   KXHIGHDEN-26MAR10-B69.5        no      146   57¢  100¢ $ +62.78
+2026-03-09   KXHIGHDEN-26MAR10-B71.5        no      140   63¢  100¢ $ +51.80
+2026-03-09   KXHIGHDEN-26MAR10-B73.5        no      116   70¢  100¢ $ +34.80
+2026-03-09   KXHIGHAUS-26MAR09-T79          yes     332    1¢    0¢ $  -3.32
+2026-03-09   KXHIGHAUS-26MAR09-B83.5        no      167   49¢  100¢ $ +85.17
+2026-03-09   KXHIGHAUS-26MAR09-B85.5        yes     127    1¢    0¢ $  -1.27
+2026-03-09   KXHIGHAUS-26MAR10-B80.5        yes     426    1¢    0¢ $  -4.26
+2026-03-09   KXHIGHAUS-26MAR10-B82.5        yes     335   17¢    0¢ $ -56.95
+2026-03-09   KXHIGHAUS-26MAR10-T80          no      121   71¢  100¢ $ +35.09
+2026-03-09   KXHIGHAUS-26MAR10-B84.5        no      133   58¢    0¢ $ -77.14
+2026-03-10   KXHIGHNY-26MAR10-B70.5         yes      85    1¢    0¢ $  -0.85
+2026-03-10   KXHIGHNY-26MAR10-B72.5         yes     635    1¢    0¢ $  -6.35
+2026-03-10   KXHIGHAUS-26MAR10-B86.5        yes    1027    1¢    0¢ $ -10.27
+2026-03-10   KXHIGHAUS-26MAR10-B84.5        yes     356    6¢  100¢ $+334.64
+2026-03-10   KXHIGHAUS-26MAR10-B82.5        no      148   44¢  100¢ $ +82.88
+2026-03-10   KXHIGHAUS-26MAR10-B80.5        no       98   65¢  100¢ $ +34.30
+
+Total realized P&L: $+4782.31
+```
