@@ -1,10 +1,13 @@
 {
-  "command": "auto-settle",
-  "timestamp": "2026-03-07T20:30:05.917758",
+  "command": "auto",
+  "timestamp": "2026-03-12T15:30:11.484971",
   "mode": "paper",
-  "balance_cents": 105343,
-  "settled": 20,
-  "total_positions": 61,
-  "open_positions": 41,
-  "total_pnl_cents": 159189
+  "balance_cents": 360211,
+  "edges_found": 58,
+  "trades_placed": 0,
+  "trades_skipped_existing": 16,
+  "trades_skipped_error": 42,
+  "trades": [],
+  "open_positions": 48,
+  "total_pnl_cents": 478231
 }
