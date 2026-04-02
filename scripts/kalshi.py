@@ -783,6 +783,16 @@ def _parse_event_date(event_ticker: str) -> date | None:
     return None
 
 
+def _dollars_to_cents(val: str | None) -> int:
+    """Convert a dollar string like '0.26' to cents (26). Returns 0 on failure."""
+    if val is None:
+        return 0
+    try:
+        return int(round(float(val) * 100))
+    except (ValueError, TypeError):
+        return 0
+
+
 def _markets_to_prices(markets: list[dict], target_date: date | None = None) -> dict[str, dict]:
     """Convert market list to {ticker: {strike_type, floor_strike, cap_strike, yes_price, no_price}}.
 
@@ -807,13 +817,18 @@ def _markets_to_prices(markets: list[dict], target_date: date | None = None) -> 
         floor_strike = m.get("floor_strike")
         cap_strike = m.get("cap_strike")
 
-        yes_price = m.get("yes_ask", m.get("last_price", 50))
+        # Kalshi API v2 uses dollar-denominated string fields
+        yes_price = _dollars_to_cents(m.get("yes_ask_dollars")) \
+            or _dollars_to_cents(m.get("last_price_dollars")) \
+            or m.get("yes_ask", m.get("last_price", 50))
+        no_price = _dollars_to_cents(m.get("no_ask_dollars")) \
+            or m.get("no_ask", 100 - yes_price)
         prices[ticker] = {
             "strike_type": strike_type,
             "floor_strike": floor_strike,
             "cap_strike": cap_strike,
             "yes_price": yes_price,
-            "no_price": m.get("no_ask", 100 - yes_price),
+            "no_price": no_price,
         }
     return prices
 
@@ -827,16 +842,17 @@ def _check_book_liquidity(client, ticker: str, side: str, contracts: int, price:
     """
     try:
         ob_resp = client.get_orderbook(ticker, depth=10)
-        ob = ob_resp.get("orderbook", ob_resp)
+        # Kalshi API v2: orderbook_fp with dollar-denominated fields
+        ob = ob_resp.get("orderbook_fp") or ob_resp.get("orderbook", ob_resp)
     except Exception:
         # Can't fetch book — assume thin, cap at 5 contracts with 2¢ slippage
         return min(contracts, 5), price + 2
 
     # Pick the right side of the book — levels are [price, quantity] arrays
     if side == "yes":
-        levels = ob.get("yes", [])
+        levels = ob.get("yes_dollars") or ob.get("yes", [])
     else:
-        levels = ob.get("no", [])
+        levels = ob.get("no_dollars") or ob.get("no", [])
 
     if not levels:
         return 0, price
@@ -849,7 +865,10 @@ def _check_book_liquidity(client, ticker: str, side: str, contracts: int, price:
     for level in levels:
         if not isinstance(level, (list, tuple)) or len(level) < 2:
             continue
-        level_price, level_qty = int(level[0]), int(level[1])
+        # Handle both dollar strings ("0.87") and cent integers (87)
+        raw_price, raw_qty = level[0], level[1]
+        level_price = _dollars_to_cents(raw_price) if isinstance(raw_price, str) else int(raw_price)
+        level_qty = int(round(float(raw_qty))) if isinstance(raw_qty, str) else int(raw_qty)
 
         if level_price <= 0 or level_qty <= 0:
             continue

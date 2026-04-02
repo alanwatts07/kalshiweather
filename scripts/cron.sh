@@ -2,8 +2,10 @@
 # Cron wrapper for kalshi weather auto-trade / auto-settle.
 export PATH="$HOME/.local/bin:$PATH"
 # Usage (crontab -e):
-#   30 11 * * * /path/to/scripts/cron.sh auto          # 6:30 AM ET (11:30 UTC)
-#   30 15 * * * /path/to/scripts/cron.sh auto-settle    # 10:30 AM ET (15:30 UTC)
+#   0 10 * * * /path/to/scripts/cron.sh auto            # 6:00 AM EDT (10:00 UTC)
+#   0 12 * * * /path/to/scripts/cron.sh auto            # 8:00 AM EDT (12:00 UTC)
+#   30 14 * * * /path/to/scripts/cron.sh auto           # 10:30 AM EDT (14:30 UTC)
+#   30 15 * * * /path/to/scripts/cron.sh auto-settle    # 11:30 AM EDT (15:30 UTC)
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 LOG_DIR="$HOME/.openclaw/kalshi-weather"
