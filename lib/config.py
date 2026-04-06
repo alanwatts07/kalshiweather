@@ -35,7 +35,7 @@ WRITE_RATE_LIMIT = 10  # per second
 
 # Edge detection defaults
 MIN_EDGE_PCT = 8.0          # minimum edge % to flag
-MIN_PRICE_CENTS = 5         # skip markets priced below 5¢ (illiquid longshots)
+MIN_PRICE_CENTS = 1         # allow 1¢ longshots — book-walk verifies real liquidity before filling
 KELLY_FRACTION = 0.25       # quarter-Kelly
 MAX_POSITION_PCT = 5.0      # max 5% of balance per position
 
