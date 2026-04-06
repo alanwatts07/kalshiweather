@@ -1,6 +1,6 @@
 # kalshiweather
 
-**Paper Trading Results: +$4,782 (+478% ROI) in 11 days** — 254 trades, 49.6% win rate, 3.23:1 payoff ratio. See [TRADE_LOG.md](TRADE_LOG.md) for the full verified history.
+**Paper Trading Results: +$9,078 (+908% ROI) in 15 days** — 302 closed trades, 57 open positions, $10K equity from $1K start. See [TRADE_LOG.md](TRADE_LOG.md) for the full verified history.
 
 ![Preview](preview2.png)
 
@@ -38,7 +38,9 @@ corrected_members = [m - mean_bias for m in raw_members]
 
 Corrections are stored in `~/.openclaw/kalshi-weather/bias_corrections.json` and require a minimum of 10 samples per city-month to activate. They automatically expire after 45 days, prompting retraining.
 
-**Example corrections** (trained Feb 2026):
+Bias corrections are retrained automatically on the 1st and 15th of each month via cron.
+
+**Example corrections** (trained Apr 2026):
 | City | Month | Bias | Interpretation |
 |------|-------|------|---------------|
 | NY | Jan | +1.8 deg F | GFS runs 1.8 deg warm in NYC winters |
@@ -53,7 +55,7 @@ For each temperature bracket market (e.g., `KXHIGHNY-26MAR02-T45`), the bot comp
 edge% = (ensemble_prob - market_implied) / market_implied * 100
 ```
 
-Markets with edge >= **8%** are flagged as opportunities. Both YES and NO sides are evaluated. Markets priced below 5 cents are skipped (illiquid longshots).
+Markets with edge >= **8%** are flagged as opportunities. Both YES and NO sides are evaluated. Markets priced as low as 1 cent are eligible — order book liquidity verification (see below) prevents phantom fills on illiquid longshots.
 
 ### 4. Position Sizing (Quarter-Kelly)
 
@@ -190,10 +192,14 @@ uv run scripts/kalshi.py auto --live
 ### Automated Scheduling
 
 ```bash
-# Scan for edges after each GFS run (4x daily)
-50 3,9,15,21 * * * cd /path/to/kalshiweather && uv run scripts/kalshi.py auto --live
-# Settle expired positions each morning
-30 14 * * * cd /path/to/kalshiweather && uv run scripts/kalshi.py auto-settle --live
+# Morning scans during prime liquidity window (6 AM, 8 AM, 10:30 AM EDT)
+0 10 * * * /path/to/scripts/cron.sh auto
+0 12 * * * /path/to/scripts/cron.sh auto
+30 14 * * * /path/to/scripts/cron.sh auto
+# Auto-settle expired positions
+30 15 * * * /path/to/scripts/cron.sh auto-settle
+# Retrain bias corrections (1st and 15th of each month)
+0 9 1,15 * * cd /path/to/kalshiweather && uv run scripts/train_bias.py
 ```
 
 ## License
